@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GTWalsheimPro-Light.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GTWalsheimPro-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GTWalsheimPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GTWalsheimPro-Bold.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+*{
+    font-family: 'GT Walsheim Pro', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
 }

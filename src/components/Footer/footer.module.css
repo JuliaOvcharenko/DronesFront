@@ -1,0 +1,18 @@
+.straight{
+    background-color:rgb(218, 255, 255)
+}
+
+.links{
+    display: flex;
+    gap: clamp(0.5rem, 1rem, 1.5rem)
+}
+
+.desc-footer{
+    display: flex;
+    gap: clamp(0.5rem, 1rem, 1.5rem)
+}
+
+.rounded{
+    background-color:rgb(255, 218, 218);
+    padding: clamp(0.5rem, 1rem, 1.5rem)
+}

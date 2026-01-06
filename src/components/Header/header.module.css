@@ -1,0 +1,8 @@
+.full{
+    background-color:rgb(250, 255, 207)
+}
+
+.half{
+    background-color:rgb(250, 255, 207);
+    opacity: 50%
+}
