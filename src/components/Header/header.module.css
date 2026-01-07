@@ -1,8 +1,74 @@
+.base-header{
+    background-color:rgb(255, 255, 255);
+    border-radius: clamp(3rem, 3.5rem, 4rem);
+    border: 1px solid #E4E4E7;
+    height: clamp(3rem, 3.5rem, 4rem);
+    margin: clamp(1rem, 1.5rem, 2rem) clamp(1rem, 1.5rem, 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.5rem, 0.7rem, 1rem) clamp(1.8rem, 2.3rem, 2.8rem);
+}
+
 .full{
-    background-color:rgb(250, 255, 207)
+    background-color:rgb(255, 255, 255);
 }
 
 .half{
-    background-color:rgb(250, 255, 207);
-    opacity: 50%
+    background-color:rgb(255, 255, 255, 0.5);
+}
+
+.links-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(15rem, 15.5rem, 16rem)
+}
+
+.link{
+    text-decoration: none;
+    font-size: clamp(0.6em, 0.9em, 1.2em)
+}
+
+.halfLink:hover{
+    background-color: #cacbdb
+}
+
+.fullLink:hover{
+    background-color: #dddff4
+}
+
+.fullLink {
+    color: #9EA0AA;
+}
+
+
+.halfLink {
+    color: #0C122A;
+}
+
+.drones-logo{
+    width: clamp(6rem, 7rem, 8rem);
+    height: clamp(1rem, 1.3rem, 1.6rem);
+}
+
+.logo-container{
+    width: clamp(17rem, 17.5rem, 18rem)
+}
+
+.action-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(1rem, 1.5rem, 2rem)
+}
+
+.buy-image{
+    width: clamp(0.8rem, 1.1rem, 1.4rem);
+    height: clamp(0.8rem, 1.1rem, 1.4rem);
+}
+
+.header-profile{
+    width: clamp(0.6rem, 0.9rem, 1.2rem);
+    height: clamp(0.8rem, 1.1rem, 1.4rem);
 }

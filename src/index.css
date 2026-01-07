@@ -33,3 +33,11 @@
     padding: 0px;
     box-sizing: border-box; 
 }
+
+body.home{
+    background-color: #CDD5DD
+}
+
+body.about{
+    background-color: #FFFFFF80
+}
