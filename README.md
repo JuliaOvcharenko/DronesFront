@@ -1,46 +1,201 @@
-# Getting Started with Create React App
+# Project "Drones - e-shop with drones and thermal imagers - Frontend" | Проєкт "Drones - онлайн магазин з дронами та тепловізорами - Frontend." 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Навігація | Navigation on README:
+- [Структура | Structure of the project](#структура--structure-of-the-project)
+- [Стиль написання коду | Code writing style](#стиль-написання-коду--code-writing-style)
+- [Деталі роботи у команді | Details of teamwork](#деталі-роботи-у-команді--details-of-teamwork)
+- [Опис сторінок | Pages description](#опис-сторінок--pages-description)
+- [Як встановити та запустити проєкт? | How to install and run the project?](#як-встановити-та-запустити-проєкт--how-to-install-and-run-the-project)
+- [Висновок | Conclusion](#висновок--conclusion)
 
-## Available Scripts
+## Структура | Structure of the project
 
-In the project directory, you can run:
+* ![](images_for_readme/figma.svg) [Фігджем структура проєкту](https://www.figma.com/board/guK0cWERy3vRj89YMRhd3C/Drones--Frontend---Structure-of-the-project?node-id=0-1&p=f&t=cty2A4mgxxkPm1xP-0)
 
-### `npm start`
+___
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* ![](images_for_readme/figma.svg) [FigJam structure of the project](https://www.figma.com/board/guK0cWERy3vRj89YMRhd3C/Drones--Frontend---Structure-of-the-project?node-id=0-1&p=f&t=cty2A4mgxxkPm1xP-0)
 
-### `npm test`
+___
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Стиль написання коду | Code writing style
 
-### `npm run build`
+1. Код розподіляється за логічними шарами:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Entry points** — файли, з яких починається виконання застосунку.
+- **assets** — статичні ресурси (зображення, іконки, шрифти, звуки тощо).
+- **components** — UI-компоненти, що використовуються для побудови сторінок.
+- **pages** — сторінки застосунку.
+- **shared** — перевикористовувані ресурси (UI-компоненти, хуки, типи).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Найменування файлів
+- Імена файлів формуються **через крапку**, відповідно до їх призначення:
+  - `component.tsx`
+  - `page.tsx`
+  - `layout.tsx`
+  - `styles.module.css`
 
-### `npm run eject`
+1. Стилізація
+- Для стилів використовується **CSS**.
+- Назви класів мають бути зрозумілими.
+- Класи застосовуються через обʼєкт `styles`:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+    <div className = {styles['logo-container']}></div>
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Для відступів використовується один Tab (4 пробіли).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Деталі роботи у команді | Details of teamwork
 
-## Learn More
+__Відсутні.__
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+___
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Опис сторінок | Pages description
+
+
+<details>
+    <summary><strong>Головна сторінка | Main Page</strong></summary>
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка Каталогу | Catalog Page</strong></summary>
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка контактів магазину | Shop Contacts Page</strong></summary>
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка "Про нас" | About Us Page</strong></summary>
+
+___
+
+- Сторінка описує команду магазину.
+___
+
+```sh
+    Ми — команда фахівців, що з 2022 року постачає дрони й тепловізори для професійного, цивільного та волонтерського використання. Працюємо з перевіреною технікою, консультуємо з власного досвіду та підтримуємо клієнтів на кожному етапі — від вибору до застосування.
+```
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка товару | Product Page</strong></summary>
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка замовлення | Order Page</strong></summary>
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка Кабінету | Account Page</strong></summary>
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка Not Found | Not Found Page</strong></summary>
+    
+___
+
+    Сторінку не знайдено. Можливо, вона була видалена, переміщена або ви перейшли за неправильним посиланням. Перевірте адресу або поверніться на головну сторінку, щоб продовжити роботу з сайтом
+
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка реєстрації | Registration Page</strong></summary>
+</details>
+
+___
+
+<details>
+    <summary><strong>Сторінка аутентифікації | Login Page</strong></summary>
+</details>
+
+___
+
+
+## Як встановити та запустити проєкт? | How to install and run the project?
+
+<details>
+  <summary><strong>
+
+  ![](images_for_readme/windows.svg)
+  ![](images_for_readme/macos.svg) For any OS</strong></summary>
+
+
+1. Перед початком переконайтесь, що на вашому компʼютері встановлено:
+
+- **Node.js** (рекомендовано LTS-версію)
+  - Перевірка:
+    ```bash
+    node -v
+    ```
+- **Git**
+  - Перевірка:
+    ```bash
+    git --version
+    ```
+  
+2. Склонуйте [репозиторій](https://github.com/JuliaOvcharenko/DronesFront) з GitHub. 
+  | Clone the [repository](https://github.com/JuliaOvcharenko/DronesFront) from GitHub:
+
+    ```sh
+    git clone https://github.com/JuliaOvcharenko/DronesFront
+    ```
+
+2. Перейдіть в папку проєкту | Go to the project folder:.
+  
+    ```sh
+    cd DronesFront
+    ```
+
+2. Встановіть залежності. | Install dependencies.
+   
+    ```sh
+    npm i
+    ```
+
+3. Запуск проєкту | Start the project:
+    ```sh
+      npm start
+    ```
+  
+4. Вітаємо! Ви локально запустили проєкт!
+    ___
+    Done!
+    You have successfully run the project locally.
+
+</details>
+
+___
+
+## Висновок | Conclusion
+
+
+
+

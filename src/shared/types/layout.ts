@@ -7,15 +7,16 @@ export interface HeaderProps {
 
 export interface FooterProps {
     footerVariant: FooterVariant
-    links?: string[]
+    links?: {label: string; path: string}[];
     bigNumbers?: string[] 
     numberDescribtion?: string[]
+
 }
 
 export interface LayoutProps {
     headerVariant: HeaderVariant
     footerVariant: FooterVariant
-    links?: string[]
+    links?: {label: string; path: string}[];
     bigNumbers?: string[] 
     numberDescribtion?: string[]
 }

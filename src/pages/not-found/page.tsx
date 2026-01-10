@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./page.module.css"
-import dronesLogo from '../../assets/icons/Subtract.png';
 
 
 export function NotFoundPage() {
+    document.body.className = "not-found"
+    const navigate = useNavigate()
+
+    
     return (
         <div className={styles["content-container"]}>
             <main className={styles["main-content"]}>
@@ -16,24 +20,10 @@ export function NotFoundPage() {
                     Сторінка, яку ви шукаєте, не існує або була переміщена.
                 </p>
 
-                <button className={styles["home-button"]}>
+                <button className={styles["home-button"]} onClick={() => navigate('/')}>
                     НА ГОЛОВНУ
                 </button>
             </main>
-
-            <div className={styles["custom-footer"]}>
-                <img
-                    src={dronesLogo}
-                    alt="Drones Watermark"
-                    className={styles["watermark-img"]}
-                />
-
-                <div className={styles["footer-line"]} />
-
-                <p className={styles["copyright-text"]}>
-                    © 2025 Drones Всі права захищені.
-                </p>
-            </div>
         </div>
     );
 }

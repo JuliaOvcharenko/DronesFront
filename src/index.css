@@ -34,7 +34,7 @@
     box-sizing: border-box; 
 }
 
-body.home{
+body.home, body.not-found{
     background-color: #CDD5DD
 }
 

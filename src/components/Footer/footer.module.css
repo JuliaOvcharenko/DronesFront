@@ -1,5 +1,15 @@
 .straight{
-    background-color:rgb(218, 255, 255)
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    pointer-events: none;
+    padding-top: clamp(29.5rem, 30rem, 30.5rem)
 }
 
 .links{
@@ -13,6 +23,129 @@
 }
 
 .rounded{
-    background-color:rgb(255, 218, 218);
     padding: clamp(0.5rem, 1rem, 1.5rem)
+}
+
+.watermark-img {
+    width: clamp(10rem, 15vw, 20rem);
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.footer-line {
+    width: 95%;
+    height: 1px;
+    background-color:#F4F4F4; 
+    
+    margin-bottom: 2rem;
+}
+
+.copyright-text {
+    color: #9CA3AF;
+    font-size: calc(0.40vw + 0.60vh);
+    margin: 0;
+    text-transform: none;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+.footer-back{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    z-index: -1;
+}
+
+.rounded {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(4.5rem, 5rem, 5.5rem) ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: clamp(49.5rem, 50rem, 50.5rem);
+    padding-top: 100px; 
+    flex-grow: 1; 
+}
+
+/* Блок с цифрами */
+.desc-footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 50px;
+    gap: clamp(2.5rem, 3rem, 3.5rem)
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(2rem, 2.5rem, 3rem)
+}
+
+.bigNum {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0;
+    color: #0d1222;
+}
+
+.descText {
+    font-size: 14px;
+    margin-top: 4px;
+    color: #4a4a4a;
+}
+
+/* Навигация */
+.links {
+    display: flex;
+    gap: 30px;
+    margin-top: 370px;
+}
+
+.links p:hover {
+    color: #0f1736; 
+    text-decoration: underline;
+}
+
+.links p {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #0C122A;
+
+}
+
+.copyright {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto; 
+    padding-bottom: 20px;
+}
+
+.copyright hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.copyText {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
 }

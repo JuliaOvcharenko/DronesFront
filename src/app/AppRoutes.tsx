@@ -9,12 +9,24 @@ export function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<Layout headerVariant="half" footerVariant="rounded" links={["КАТАЛОГ", "ПРО НАС", "КОНТАКТИ", "КОШИК", "КАБІНЕТ"]} bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}/>}>
+                <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}
+                    links={[
+                        {label: "КАТАЛОГ", path: "/catalog"},
+                        {label: "ПРО НАС", path: "/about"},
+                        {label: "КОНТАКТИ", path: "/contacts"},
+                        {label: "КОШИК", path: "/cart"},
+                        {label: "КАБІНЕТ", path: "/account"}]}/>}>
                     <Route path="/" element={<HomePage />} />
                 </Route>
 
-                <Route element={<Layout headerVariant="full" footerVariant="rounded"  links={["КАТАЛОГ", "ПРО НАС", "КОНТАКТИ", "КОШИК", "КАБІНЕТ"]} bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}/>}>
-                    <Route path="/about" element={<AboutPage/>}/>
+                <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}
+                    links={[
+                        {label: "КАТАЛОГ", path: "/catalog"},
+                        {label: "ПРО НАС", path: "/about"},
+                        {label: "КОНТАКТИ", path: "/contacts"},
+                        {label: "КОШИК", path: "/cart"},
+                        {label: "КАБІНЕТ", path: "/account"}]}/>}>
+                    <Route path="/about" element={<AboutPage />} />
                 </Route>
 
                 <Route element={<Layout headerVariant="half" footerVariant="straight"/>}>

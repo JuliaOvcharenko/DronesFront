@@ -4,10 +4,10 @@
     border: 1px solid #E4E4E7;
     height: clamp(3rem, 3.5rem, 4rem);
     margin: clamp(1rem, 1.5rem, 2rem) clamp(1rem, 1.5rem, 2rem);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: clamp(0.5rem, 0.7rem, 1rem) clamp(1.8rem, 2.3rem, 2.8rem);
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
 .full{
@@ -22,7 +22,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(15rem, 15.5rem, 16rem)
+    width: clamp(15rem, 15.5rem, 16rem);
+}
+
+.header-container {
+    position: relative;
+    width: clamp(86.5rem, 87rem, 87.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .link{
@@ -50,10 +58,15 @@
 .drones-logo{
     width: clamp(6rem, 7rem, 8rem);
     height: clamp(1rem, 1.3rem, 1.6rem);
+    margin-top: clamp(0.2rem, 0.4rem, 0.6rem);
 }
 
-.logo-container{
-    width: clamp(17rem, 17.5rem, 18rem)
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
 .action-icons{
