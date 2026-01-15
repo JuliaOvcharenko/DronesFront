@@ -1,4 +1,14 @@
-.back{
-    width: 90vw;
-    height: 100vh;
+/* src/pages/home/page.module.css */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  /* ОБЯЗАТЕЛЬНО: Это убирает горизонтальную полосу прокрутки, 
+     которую могут создавать вылетающие дроны */
+  overflow-x: hidden; 
+  
+  background-color: #fff;
 }
