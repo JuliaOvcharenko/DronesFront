@@ -1,7 +1,10 @@
 import styles from './AboutSection.module.css';
 import arrowIcon from '../../assets/icons/strelka.png'; 
+import { useNavigate } from 'react-router-dom';
 
 export function AboutSection() {
+  const navigate = useNavigate();
+
   return (
     <section className={styles["about-section"]}>
       <div className={styles["container"]}>
@@ -9,15 +12,18 @@ export function AboutSection() {
         {/* Заголовок */}
         <h2 className={styles["title"]}>ПРО НАС</h2>
         
-        {/* Текст описания */}
+        {/* Текст */}
         <p className={styles["description"]}>
-          Ми — команда, що об’єднує технології та надійність. <br />
-          Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах. <br />
+          Ми — команда, що об’єднує технології та надійність. 
+          Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах. 
           Обираємо тільки те, чому довіряємо самі.
         </p>
 
-        {/* Кнопка с иконкой стрелки */}
-        <button className={styles["read-more-btn"]}>
+        {/* Кнопка */}
+        <button 
+          className={styles["read-more-btn"]}
+          onClick={() => navigate('/about')}
+        >
           ЧИТАТИ БІЛЬШЕ
           <img 
             src={arrowIcon} 

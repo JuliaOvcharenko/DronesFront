@@ -1,19 +1,21 @@
 import React from 'react';
 import styles from './CatalogPreview.module.css';
+import { useNavigate } from 'react-router-dom'; 
 
-import img1 from '../../assets/images//catalog1.png';
+import img1 from '../../assets/images/catalog1.png';
 import img2 from '../../assets/images/catalog2.png';
 import img3 from '../../assets/images/catalog3.png';
 import img4 from '../../assets/images/catalog4.png';
 
 export function CatalogPreview() {
-    // Дані для карток можна потім перенести
+    const navigate = useNavigate(); 
+
     const items = [
         {
             id: 1,
             title: "DJI Mini 4K",
             price: "29 900 ₴",
-            oldPrice: "29 900 ₴", // Тут ціна однакова, значить знижки немає
+            oldPrice: "29 900 ₴",
             image: img1
         },
         {
@@ -27,7 +29,7 @@ export function CatalogPreview() {
             id: 3,
             title: "DJI Mini 4 Pro",
             price: "29 900 ₴",
-            oldPrice: "34 000 ₴", // Приклад зі знижкою
+            oldPrice: "34 000 ₴",
             image: img3
         },
         {
@@ -57,12 +59,10 @@ export function CatalogPreview() {
 
                         {/* Ціна */}
                         <div className={styles["price-block"]}>
-                            {/* Якщо є стара ціна і вона відрізняється показуємо перекреслену */}
                             {item.oldPrice && item.oldPrice !== item.price && (
                                 <span className={styles["old-price"]}>{item.oldPrice}</span>
                             )}
 
-                            {/* Основна ціна (червона, якщо є знижка, інакше чорна) */}
                             <span className={
                                 item.oldPrice && item.oldPrice !== item.price
                                     ? styles["price-accent"]
@@ -74,8 +74,10 @@ export function CatalogPreview() {
                     </div>
                 ))}
             </div>
-
-            <button className={styles["view-all-btn"]}>
+            <button 
+                className={styles["view-all-btn"]}
+                onClick={() => navigate('/catalog')}
+            >
                 ДИВИТИСЬ ВСІ
                 <span className={styles["arrow"]}>→</span>
             </button>

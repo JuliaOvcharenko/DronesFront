@@ -1,5 +1,5 @@
 .straight{
-    position: absolute;
+    position: relative;
     bottom: 1rem;
     left: 0;
     width: 100%;
@@ -9,7 +9,6 @@
     justify-content: flex-end;
     z-index: 1;
     pointer-events: none;
-    padding-top: clamp(29.5rem, 30rem, 30.5rem)
 }
 
 .links{
@@ -22,9 +21,7 @@
     gap: clamp(0.5rem, 1rem, 1.5rem)
 }
 
-.rounded{
-    padding: clamp(0.5rem, 1rem, 1.5rem)
-}
+
 
 .watermark-img {
     width: clamp(10rem, 15vw, 20rem);
@@ -65,7 +62,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: clamp(4.5rem, 5rem, 5.5rem) ;
 }
 
 .container {

@@ -23,7 +23,6 @@ export function HomePage() {
           <AboutSection />
           <NewArrivals />
           <CatalogPreview />
-      {/* Дальше пойдут другие секции */}
     </div>
   );
 };

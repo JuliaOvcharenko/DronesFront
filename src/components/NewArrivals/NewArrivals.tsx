@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './NewArrivals.module.css';
 import { ProductCard } from './../ProductCard/ProductCard';
 
@@ -10,7 +9,6 @@ import drone2 from '../../assets/images/drone2.png';
 import drone3 from '../../assets/images/drone3.png';
 
 export function NewArrivals() {
-  // Данные для карточек (можно вынести в отдельный файл потом)
   const products = [
     {
       id: 1,
@@ -18,7 +16,8 @@ export function NewArrivals() {
       desc: "Easy-To-Use Mini Camera Drone",
       price: "299",
       bg: bg1,
-      drone: drone1
+      drone: drone1,
+      gradient: "linear-gradient(to bottom, rgba(230, 185, 100, 0) 30%, #F5BE4F 100%)"
     },
     {
       id: 2,
@@ -26,7 +25,8 @@ export function NewArrivals() {
       desc: "Flagship Mini Camera Drone",
       price: "759",
       bg: bg2,
-      drone: drone2
+      drone: drone2,
+      gradient: "linear-gradient(to bottom, rgba(58, 74, 58, 0) 30%, #1A271B 100%)"
     },
     {
       id: 3,
@@ -34,7 +34,8 @@ export function NewArrivals() {
       desc: "Dual-Camera Drone System",
       price: "1099",
       bg: bg3,
-      drone: drone3
+      drone: drone3,
+      gradient: "linear-gradient(to bottom, rgba(90, 134, 147, 0) 30%, #4F94A4 100%)"
     }
   ];
 
@@ -51,6 +52,7 @@ export function NewArrivals() {
             price={product.price}
             bgImage={product.bg}
             droneImage={product.drone}
+            overlayGradient={product.gradient}
           />
         ))}
       </div>

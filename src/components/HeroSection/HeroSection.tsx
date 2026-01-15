@@ -1,14 +1,16 @@
 import styles from './HeroSection.module.css';
 import droneImage from '../../assets/gelicopter.png'; 
+import { useNavigate } from 'react-router-dom';
 
 export function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className={styles["hero-section"]}>
       
-      {/* Контейнер для центрирования */}
       <div className={styles["content-wrapper"]}>
         
-        {/* Заголовок (на заднем плане) */}
+        {/* Заголовок */}
         <div className={styles["title-container"]}>
             <h1 className={styles["main-title"]}>
               ТЕХНОЛОГІЇ
@@ -18,7 +20,7 @@ export function HeroSection() {
             </h2>
         </div>
 
-        {/* Картинка дрона (поверх текста) */}
+        {/* Дрон */}
         <div className={styles["drone-container"]}>
             <img 
                 src={droneImage} 
@@ -27,20 +29,24 @@ export function HeroSection() {
             />
         </div>
 
-        {/* Блок с описанием и кнопкой (справа) */}
+        {/* Інфо-блок */}
         <div className={styles["info-block"]}>
             <p className={styles["description"]}>
                 Передові технології в одному місці. <br/>
                 Обирай найкраще для найважливішого.
             </p>
-            <button className={styles["catalog-btn"]}>
+            
+            <button 
+                className={styles["catalog-btn"]}
+                onClick={() => navigate('/catalog')}
+            >
                 ДО КАТАЛОГУ
             </button>
         </div>
 
       </div>
 
-      {/* Белая горка снизу */}
+      {/* Біла арка знизу */}
       <div className={styles["bottom-curve"]}></div>
     </section>
   );
