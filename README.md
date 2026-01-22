@@ -61,6 +61,15 @@ ___
 <details>
     <summary><strong>Головна сторінка | Main Page</strong></summary>
 
+____
+
+Головна сторінка проєкту. На сторінці представлені нові та популярні товари магазину, за допомогою яких користувач може швидко та зручно дізнатися про вміст.
+
+____
+
+The project's home page. The page presents new and popular store products, allowing the user to quickly and conveniently learn about the content.
+
+
 </details>
 
 ___
@@ -84,7 +93,7 @@ ___
 
 ___
 
-- Сторінка описує команду магазину.
+- Сторінка описує команду магазину. | The page describes the store's team.
 ___
 
 ```sh
@@ -120,7 +129,11 @@ ___
     
 ___
 
-    Сторінку не знайдено. Можливо, вона була видалена, переміщена або ви перейшли за неправильним посиланням. Перевірте адресу або поверніться на головну сторінку, щоб продовжити роботу з сайтом
+Сторінку не знайдено. Можливо, вона була видалена, переміщена або ви перейшли за неправильним посиланням. Перевірте адресу або поверніться на головну сторінку, щоб продовжити роботу з сайтом
+
+___
+
+Page not found. Possibly, it was removed, moved, or you went for the wrong order. Flip the address or turn to the main page to continue using the site
 
 </details>
 
