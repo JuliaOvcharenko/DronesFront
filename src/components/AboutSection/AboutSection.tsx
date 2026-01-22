@@ -2,6 +2,7 @@ import styles from './AboutSection.module.css';
 import arrowIcon from '../../assets/icons/strelka.png'; 
 import { useNavigate } from 'react-router-dom';
 
+
 export function AboutSection() {
   const navigate = useNavigate();
 

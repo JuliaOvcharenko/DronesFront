@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { getProductSuggestions, Product } from '../../api/products';
 import defaultImg from '../../assets/images/catalog1.png';
 
+
 export function CatalogPreview() {
     const navigate = useNavigate();
     const [products, setProducts] = useState<Product[]>([]);
@@ -14,6 +15,11 @@ export function CatalogPreview() {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
+
+                //  !!!
+                await new Promise(res => setTimeout(res, 3000))
+
+
                 const data = await getProductSuggestions('popular');
                 setProducts(data);
             } catch (err: any) {

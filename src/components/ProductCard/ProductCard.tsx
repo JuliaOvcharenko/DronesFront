@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.css';
 import { useNavigate } from 'react-router-dom';
 
+
 interface ProductCardProps {
   title: string;
   description: string;

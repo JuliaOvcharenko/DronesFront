@@ -2,6 +2,7 @@ import styles from './HeroSection.module.css';
 import droneImage from '../../assets/gelicopter.png'; 
 import { useNavigate } from 'react-router-dom';
 
+
 export function HeroSection() {
   const navigate = useNavigate();
 
@@ -10,7 +11,6 @@ export function HeroSection() {
       
       <div className={styles["content-wrapper"]}>
         
-        {/* Заголовок */}
         <div className={styles["title-container"]}>
             <h1 className={styles["main-title"]}>
               ТЕХНОЛОГІЇ
@@ -20,7 +20,6 @@ export function HeroSection() {
             </h2>
         </div>
 
-        {/* Дрон */}
         <div className={styles["drone-container"]}>
             <img 
                 src={droneImage} 
@@ -29,7 +28,6 @@ export function HeroSection() {
             />
         </div>
 
-        {/* Інфо-блок */}
         <div className={styles["info-block"]}>
             <p className={styles["description"]}>
                 Передові технології в одному місці. <br/>
@@ -46,7 +44,6 @@ export function HeroSection() {
 
       </div>
 
-      {/* Біла арка знизу */}
       <div className={styles["bottom-curve"]}></div>
     </section>
   );
