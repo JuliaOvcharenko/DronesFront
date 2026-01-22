@@ -3,7 +3,7 @@
 
 // export function HomePage(){
 //     document.body.className = "home"
-    
+
 //     return <div className = {styles['back']}>
 //         <p>Home Page</p>
 //     </div>
@@ -16,13 +16,13 @@ import { NewArrivals } from '../../components/NewArrivals/NewArrivals';
 import { CatalogPreview } from '../../components/CatalogPreview/CatalogPreview';
 
 export function HomePage() {
-    document.body.className = "home"
+  document.body.className = "home"
   return (
     <div className={styles["home-page"]}>
-          <HeroSection />
-          <AboutSection />
-          <NewArrivals />
-          <CatalogPreview />
+      <HeroSection />
+      <AboutSection />
+      <NewArrivals />
+      <CatalogPreview />
     </div>
   );
 };
