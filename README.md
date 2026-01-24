@@ -23,7 +23,7 @@ ___
 
 1. Код розподіляється за логічними шарами:
 
-![Entry points](https://img.shields.io/badge/Entry-points-informational) ![assets](https://img.shields.io/badge/assets-brightgreen) ![components](https://img.shields.io/badge/components-yellow)  ![pages](https://img.shields.io/badge/HTML-teal) ![shared](https://img.shields.io/badge/shared-ff69b4) 
+    ![Entry points](https://img.shields.io/badge/Entrypoints-informational) ![assets](https://img.shields.io/badge/assets-brightgreen) ![components](https://img.shields.io/badge/components-yellow)  ![pages](https://img.shields.io/badge/HTML-teal) ![shared](https://img.shields.io/badge/shared-ff69b4) 
 
 
 - **Entry points** — файли, з яких починається виконання застосунку.
@@ -33,14 +33,14 @@ ___
 - **shared** — перевикористовувані ресурси (UI-компоненти, хуки, типи).
 
 
-1. Найменування файлів
+2. Найменування файлів
 - Імена файлів формуються **через крапку**, відповідно до їх призначення:
   - `component.tsx`
   - `page.tsx`
   - `layout.tsx`
   - `styles.module.css`
 
-1. Стилізація
+3. Стилізація
 - Для стилів використовується **CSS**.
 - Назви класів мають бути зрозумілими.
 - Класи застосовуються через обʼєкт `styles`:
