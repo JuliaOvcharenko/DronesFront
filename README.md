@@ -22,7 +22,6 @@ ___
 ## Стиль написання коду | Code writing style
 
 1. Код розподіляється за логічними шарами:
-2. 
 
 ![Entry points](https://img.shields.io/badge/Entry-points-informational) ![assets](https://img.shields.io/badge/assets-brightgreen) ![components](https://img.shields.io/badge/components-yellow)  ![pages](https://img.shields.io/badge/HTML-teal) ![shared](https://img.shields.io/badge/shared-ff69b4) 
 
