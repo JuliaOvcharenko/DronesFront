@@ -9,7 +9,6 @@ import aboutImageMission from '../assets/images/aboutImageMission.png';
 import aboutImageTeam from '../assets/images/aboutImageTeam.png';
 
 
-
 export const IMAGES = {
     dronesLogo,
     headerProfile,
