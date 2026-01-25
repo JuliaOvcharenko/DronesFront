@@ -1,5 +1,10 @@
 # Project "Drones - e-shop with drones and thermal imagers - Frontend" | Проєкт "Drones - онлайн магазин з дронами та тепловізорами - Frontend." 
 
+![React](https://img.shields.io/badge/React-turquoise) ![NodeJs](https://img.shields.io/badge/Node_js-brightgreen) ![SPA](https://img.shields.io/badge/SPA-yellow)  ![Frontend](https://img.shields.io/badge/Frontend-orange) ![architecture_fed](https://img.shields.io/badge/architecture_fed-purple)
+
+_____
+
+
 ## Навігація | Navigation on README:
 - [Структура | Structure of the project](#структура--structure-of-the-project)
 - [Стиль написання коду | Code writing style](#стиль-написання-коду--code-writing-style)
