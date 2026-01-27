@@ -8,9 +8,7 @@ import { getProductSuggestions, Product } from '../../api/products';
 import bg1 from '../../assets/images/bg1.png';
 import bg2 from '../../assets/images/bg2.png';
 import bg3 from '../../assets/images/bg3.png';
-import Drone1 from '../../assets/images/drone1.png'; 
-import Drone2 from '../../assets/images/drone2.png';
-import Drone3 from '../../assets/images/drone3.png';
+import Drone1 from '../../assets/images/drone1.png';
 import { ProductCard } from '../ProductCard';
 
 
@@ -22,11 +20,10 @@ export function NewArrivals() {
     const [error, setError] = useState<string | null>(null);
 
     const backgrounds = [bg1, bg2, bg3];
-    const drones = [Drone1, Drone2, Drone3];
     const gradients = [
-      "linear-gradient(to bottom, rgba(230, 185, 100, 0) 30%, #E6B964 100%)", 
-      "linear-gradient(to bottom, rgba(58, 74, 58, 0) 30%, #3A4A3A 100%)",    
-      "linear-gradient(to bottom, rgba(90, 134, 147, 0) 30%, #5A8693 100%)"  
+        "linear-gradient(to bottom, rgba(230, 185, 100, 0) 30%, #E6B964 100%)",
+        "linear-gradient(to bottom, rgba(58, 74, 58, 0) 30%, #3A4A3A 100%)",
+        "linear-gradient(to bottom, rgba(90, 134, 147, 0) 30%, #5A8693 100%)"
     ];
 
     useEffect(() => {
@@ -49,7 +46,7 @@ export function NewArrivals() {
         };
 
         fetchData();
-      }, []);
+    }, []);
 
     if (isLoading) {
         return (
@@ -61,34 +58,34 @@ export function NewArrivals() {
 
     if (error) {
         return (
-          <section className={styles.section}>
-              <h2 className={styles["section-title"]}>НОВЕ НА САЙТІ</h2>
-              <div style={{ color: 'red', textAlign: 'center', marginTop: '20px' }}>
-                  {error}
-              </div>
-          </section>
+            <section className={styles.section}>
+                <h2 className={styles["section-title"]}>НОВЕ НА САЙТІ</h2>
+                <div style={{ color: 'red', textAlign: 'center', marginTop: '20px' }}>
+                    {error}
+                </div>
+            </section>
         );
     }
 
     return (
         <section className={styles["section"]}>
             <h2 className={styles["section-title"]}>НОВЕ НА САЙТІ</h2>
-            
+
             <div className={styles["grid"]}>
                 {products.map((product, index) => {
                     const bgImage = backgrounds[index % backgrounds.length];
                     const gradient = gradients[index % gradients.length];
-                    const droneImg = (product.images && product.images.length > 0) ? product.images[0] : drones[index % drones.length];
+                    const droneImg = product.image ? product.image : Drone1; // Використовуємо з продукту або дефолтний
 
                     return (
-                        <ProductCard 
-                          key={product.id}
-                          title={product.title}
-                          description={product.description || "Опис недоступний"}
-                          price={String(product.price)}
-                          bgImage={bgImage}
-                          droneImage={droneImg}
-                          overlayGradient={gradient}
+                        <ProductCard
+                            key={product.id}
+                            title={product.title}
+                            description={product.description || "Опис недоступний"}
+                            price={String(product.price)}
+                            bgImage={bgImage}
+                            droneImage={droneImg}
+                            overlayGradient={gradient}
                         />
                     );
                 })}

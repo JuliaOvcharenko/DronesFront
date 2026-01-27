@@ -1,67 +1,66 @@
 .content-container {
-  background-color: #CDD5DD;
-  position: relative;
-  width: 100%;
-  min-height: calc(100vh - 100px); 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding-bottom: 15vh; 
+    background-color: #CDD5DD;
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-bottom: 15vh;
 }
 
 .main-content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  gap: clamp(1rem, 1.5rem, 2rem);
-  width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    gap: clamp(1rem, 1.5rem, 2rem);
+    width: 100%;
 }
 
 .title {
-  color: #fff;
-  font-weight: bold;
-  line-height: 1;
-  font-size: calc(3.15vw + 5.55vh);
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    font-size: calc(3.15vw + 5.55vh);
+    margin: 0;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
-  color: #4A5568;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  margin: 0;
-  font-size: calc(0.80vw + 1.50vh);
+    color: #4A5568;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin: 0;
+    font-size: calc(0.80vw + 1.50vh);
 }
 
 .description {
-  color: #4A5568;
-  max-width: clamp(20rem, 80vw, 60rem);
-  margin-bottom: clamp(1.5rem, 2rem, 3rem);
-  font-size: calc(0.45vw + 0.80vh);
+    color: #4A5568;
+    max-width: clamp(20rem, 80vw, 60rem);
+    margin-bottom: clamp(1.5rem, 2rem, 3rem);
+    font-size: calc(0.45vw + 0.80vh);
 }
 
 .home-button {
-  background-color: #111827;
-  color: #fff;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  border-radius: clamp(1.5rem, 2rem, 2.5rem);
-  padding: clamp(0.8rem, 1rem, 1.2rem) clamp(2rem, 3rem, 4rem);
-  font-size: calc(0.36vw + 0.64vh);
-  transition: opacity 0.3s ease;
+    background-color: #111827;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    border-radius: clamp(1.5rem, 2rem, 2.5rem);
+    padding: clamp(0.8rem, 1rem, 1.2rem) clamp(2rem, 3rem, 4rem);
+    font-size: calc(0.36vw + 0.64vh);
+    transition: opacity 0.3s ease;
 }
 
 .home-button:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
-
