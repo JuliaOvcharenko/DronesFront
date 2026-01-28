@@ -61,7 +61,7 @@
 }
 
 .drone-img {
-  width: clamp(20rem, 40vw, 50rem);
+  width: clamp(30rem, 50vw, 60rem);
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
