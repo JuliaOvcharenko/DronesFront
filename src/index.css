@@ -34,10 +34,11 @@
     box-sizing: border-box; 
 }
 
-body.home, body.not-found{
+
+body.grey{
     background-color: #CDD5DD
 }
 
-body.about{
+body.white{
     background-color: #FFFFFF80
 }

@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 
 export function AboutPage(){
-    document.body.className = "about"
+    document.body.className = "grey"
     
 
     return <div className = {styles["about-container"]}>

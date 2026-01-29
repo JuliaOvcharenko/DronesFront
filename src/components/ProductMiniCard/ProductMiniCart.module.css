@@ -1,0 +1,8 @@
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    width: clamp(20.5rem, 21rem, 21.5rem);
+    height: clamp(20.5rem, 21rem, 21.5rem);
+    justify-content: center;
+    align-items: center
+}

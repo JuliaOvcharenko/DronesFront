@@ -1,0 +1,78 @@
+.catalog-container{
+    display: flex;
+    flex-direction: column;
+    padding: clamp(8.5rem, 9vh, 9.5rem) 20px clamp(5rem, 10vh, 10rem);
+    width: 100%;
+}
+
+.catalog-p{
+    font-weight: bold;
+    font-size: calc(1.3vw + 2.6vh);
+    color: #CDD5DD;
+    letter-spacing: 3%;
+    text-align: center;
+}
+
+.filter-container{
+    height: 60px;
+    width: fit-content;
+    display: flex;
+    gap: clamp(1rem, 1.5rem, 2rem)
+}
+
+.filter-button{
+    height: clamp(2.5rem, 3rem, 3.5rem);
+    width: clamp(2.5rem, 3rem, 3.5rem);
+    border-radius: 80px;
+    border: none;
+    background-color: #F4F4F4;
+    color: #0C122A;
+    font-size: calc(0.5vw + 0.8vh);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.filter-button:hover{
+    background-color: #E7E7EA;
+    transform: translateY(-2px);
+}
+
+.filter-button:active {
+    transform: translateY(-1px);
+    background-color: #E7E7EA;
+}
+
+.filter-button:focus {
+    background-color: #E7E7EA;
+}
+
+.products-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items:start;
+    gap: clamp(1.5rem, 2rem, 2.5rem);
+    flex-wrap: wrap;
+}
+
+.pagination-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: clamp(1.5rem, 2rem, 2.5rem);
+    padding-top: clamp(3.5rem, 4rem, 4.5rem);
+}
+
+.page-button{
+    height: clamp(1.5rem, 2rem, 2.5rem);
+    width: clamp(1.5rem, 2rem, 2.5rem);
+    border-radius: 80px;
+    border: none;
+    background-color: #F4F4F4;
+}
+
+.active-page-button{
+    height: clamp(1.5rem, 2rem, 2.5rem);
+    width: clamp(1.5rem, 2rem, 2.5rem);
+    border-radius: 80px;
+    border: none;
+    background-color: #F4F4F4;
+}

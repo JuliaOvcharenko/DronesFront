@@ -1,0 +1,1 @@
+export {ProductMiniCard} from './ProductMiniCart'

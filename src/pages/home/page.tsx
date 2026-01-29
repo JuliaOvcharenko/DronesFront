@@ -7,7 +7,7 @@ import { CatalogPreview } from '../../components/CatalogPreview';
 
 
 export function HomePage() {
-  document.body.className = "home"
+  document.body.className = "white"
   return (
     <div className={styles["home-page"]}>
       <HeroSection />

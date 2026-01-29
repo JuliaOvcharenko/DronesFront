@@ -3,6 +3,7 @@ import { Layout } from "./Layout/layout";
 import { NotFoundPage } from "../pages/not-found";
 import { AboutPage } from "../pages/about";
 import { HomePage } from "../pages/home";
+import { CatalogPage } from "../pages/catalog";
 
 
 export function AppRoutes() {
@@ -31,6 +32,16 @@ export function AppRoutes() {
 
                 <Route element={<Layout headerVariant="half" footerVariant="straight"/>}>
                     <Route path="*" element={<NotFoundPage />} />
+                </Route>
+
+                <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}
+                    links={[
+                        {label: "КАТАЛОГ", path: "/catalog"},
+                        {label: "ПРО НАС", path: "/about"},
+                        {label: "КОНТАКТИ", path: "/contacts"},
+                        {label: "КОШИК", path: "/cart"},
+                        {label: "КАБІНЕТ", path: "/account"}]}/>}>
+                    <Route path="/catalog/:page?" element={<CatalogPage />} />
                 </Route>
                   
             </Routes>

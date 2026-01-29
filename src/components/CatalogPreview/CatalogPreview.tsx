@@ -16,10 +16,6 @@ export function CatalogPreview() {
             try {
                 setIsLoading(true);
 
-                //  !!!
-                await new Promise(res => setTimeout(res, 3000))
-
-
                 const data = await getProductSuggestions('popular');
                 setProducts(data);
             } catch (err: any) {
@@ -58,9 +54,7 @@ export function CatalogPreview() {
 
             <div className={styles["grid"]}>
                 {products.map((item) => {
-                    const imageSrc = (item.images && item.images.length > 0)
-                        ? item.images[0]
-                        : defaultImg;
+                    const imageSrc = item.image ? item.image : defaultImg;
 
                     return (
                         <div key={item.id} className={styles["card"]}>
