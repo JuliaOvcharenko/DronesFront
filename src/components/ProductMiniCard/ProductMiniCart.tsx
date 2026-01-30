@@ -1,4 +1,5 @@
-import { Product } from '../../api/products'
+
+import { Product } from '../../types/product'
 import styles from './ProductMiniCart.module.css'
 
 

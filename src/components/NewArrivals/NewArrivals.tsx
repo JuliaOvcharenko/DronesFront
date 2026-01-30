@@ -3,13 +3,14 @@ import styles from './NewArrivals.module.css';
 
 import { useNavigate } from 'react-router-dom';
 
-import { getProductSuggestions, Product } from '../../api/products';
+import { getProductSuggestions} from '../../api/products';
 
 import bg1 from '../../assets/images/bg1.png';
 import bg2 from '../../assets/images/bg2.png';
 import bg3 from '../../assets/images/bg3.png';
 import Drone1 from '../../assets/images/drone1.png';
 import { ProductCard } from '../ProductCard';
+import { Product } from '../../types/product';
 
 
 export function NewArrivals() {
@@ -30,7 +31,12 @@ export function NewArrivals() {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                
+
+                //  !!!
+                await new Promise(res => setTimeout(res, 3000));
+
+
+
                 const data = await getProductSuggestions('new');
                 setProducts(data);
             } catch (err: any) {
@@ -70,7 +76,7 @@ export function NewArrivals() {
                 {products.map((product, index) => {
                     const bgImage = backgrounds[index % backgrounds.length];
                     const gradient = gradients[index % gradients.length];
-                    const droneImg = product.image ? product.image : Drone1; 
+                    const droneImg = product.image ? product.image : Drone1; // Використовуємо з продукту або дефолтний
 
                     return (
                         <ProductCard

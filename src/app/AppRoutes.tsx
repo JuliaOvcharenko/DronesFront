@@ -4,6 +4,7 @@ import { NotFoundPage } from "../pages/not-found";
 import { AboutPage } from "../pages/about";
 import { HomePage } from "../pages/home";
 import { CatalogPage } from "../pages/catalog";
+import { ProductPage } from "../pages/product";
 
 
 export function AppRoutes() {
@@ -31,7 +32,7 @@ export function AppRoutes() {
                 </Route>
 
                 <Route element={<Layout headerVariant="half" footerVariant="straight"/>}>
-                    <Route path="*" element={<NotFoundPage />} />
+                    <Route path="*" element={<ProductPage />} />
                 </Route>
 
                 <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}

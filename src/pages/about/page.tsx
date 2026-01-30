@@ -19,7 +19,7 @@ export function AboutPage(){
                 </p>
             </div>
 
-            <img src={IMAGES.aboutImage} className={styles["about-img"]}/>
+            <img src={IMAGES.aboutImage} className={styles["about-img"]} alt="About our company"/>
         </section>
 
 
@@ -37,12 +37,12 @@ export function AboutPage(){
                
             </div>
 
-            <img src={IMAGES.aboutImageMission} className={styles["mission-img"]}/>
+            <img src={IMAGES.aboutImageMission} className={styles["mission-img"]} alt="Our mission"/>
         </section>
 
 
         <section className={styles["team"]}>
-            <img src={IMAGES.aboutImageTeam} className={styles["team-img"]}/>
+            <img src={IMAGES.aboutImageTeam} className={styles["team-img"]} alt="Our team"/>
 
             <div className={styles["text-block"]}>
                 <p className = {styles['mission-header']}>КОМАНДА, ЯКІЙ МОЖНА ДОВІРЯТИ</p>
