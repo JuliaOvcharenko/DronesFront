@@ -1,10 +1,12 @@
 import styles from './ProductHeader.module.css';
-import { Product } from '../../types/product';
-import buttonBuy from '../../assets/icons/buttonBuy.png';
+import buttonBuy from '../../../assets/icons/buttonBuy.png';
+import { Product } from '../../../api/allProducts';
+
 
 interface Props {
     product: Product;
 }
+
 
 export const ProductHeader: React.FC<Props> = ({ product }) => {
     return (
@@ -30,14 +32,13 @@ export const ProductHeader: React.FC<Props> = ({ product }) => {
 
                     <div className={styles.buyCard}>
                         <div className={styles.cardHeader}>
-                            {/* Міні-фото зліва */}
+
                             <img
                                 src={product.image}
                                 alt=""
                                 className={styles.miniProductImage}
                             />
 
-                            {/* Блок з назвою та цінами */}
                             <div className={styles.titlePriceBlock}>
                                 <h3 className={styles.cardTitle}>{product.title}</h3>
 
@@ -54,11 +55,9 @@ export const ProductHeader: React.FC<Props> = ({ product }) => {
                             </div>
                         </div>
 
-                        {/* Кнопки внизу */}
                         <div className={styles.containerBuy}>
                             <img src={buttonBuy} alt="Cart" style={{ width: '3.5rem', height: 'auto' }} />
 
-                            {/* Чорна кнопка */}
                             <button className={styles.buyButton}>
                                 ЗАМОВИТИ <span>→</span>
                             </button>

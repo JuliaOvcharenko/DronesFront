@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
-import { IMAGES } from "../../shared/images"
-import { HeaderProps } from "../../shared/types"
+import { IMAGES } from "../../../shared/images"
+import { HeaderProps } from "../../../shared/types"
 import styles from "./header.module.css"
 
 

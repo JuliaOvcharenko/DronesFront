@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { CatalogPreview } from '../../components/CatalogPreview';
+
 import { Product } from '../../types/product';
 
-// Імпорт картинок
 import droneMain from '../../assets/gelicopter.png'; 
-import videoPreview from '../../assets/images/pic1.png'; // Блок 1 (Відео)
-import pic1 from '../../assets/images/pic1.png';   // Блок 2
-import pic2 from '../../assets/images/pic2.png';     // Блок 3
-import pic3 from '../../assets/images/512.png';   // Блок 4
-import { ProductHeader } from '../../components/ProductHeader';
-import { InfoBlock } from '../../components/InfoBlock';
+import videoPreview from '../../assets/images/pic1.png';
+import pic1 from '../../assets/images/pic1.png';   
+import pic2 from '../../assets/images/pic2.png';   
+import pic3 from '../../assets/images/512.png';  
+import { ProductHeader } from '../../components/Product/ProductHeader';
+import { InfoBlock } from '../../components/Product/InfoBlock';
+import { CatalogPreview } from '../../components/Home/CatalogPreview';
 
 export const ProductPage = () => {
 

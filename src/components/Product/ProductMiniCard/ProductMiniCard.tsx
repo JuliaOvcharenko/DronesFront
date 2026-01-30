@@ -1,6 +1,6 @@
 
-import { Product } from '../../types/product'
-import styles from './ProductMiniCart.module.css'
+import { Product } from '../../../types/product'
+import styles from './ProductMiniCard.module.css'
 
 
 interface ProductMiniCardProps {

@@ -1,10 +1,8 @@
 import { Outlet } from "react-router-dom";
+import { Main } from "../../components/BasicTemplate/Main";
+import { Header } from "../../components/BasicTemplate/Header";
+import { Footer } from "../../components/BasicTemplate/Footer";
 import { LayoutProps } from "../../shared/types";
-
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { Main } from "../../components/Main";
-
 
 
 export function Layout(props: LayoutProps) {

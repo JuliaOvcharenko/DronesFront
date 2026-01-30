@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CatalogPreview.module.css';
 import { useNavigate } from 'react-router-dom';
-import { getProductSuggestions } from '../../api/products';
-import defaultImg from '../../assets/images/catalog1.png';
-import { Product } from '../../types/product';
+import defaultImg from '../../../assets/images/catalog1.png';
+import { getProductSuggestions } from '../../../api/products';
+import { Product } from '../../../api/allProducts';
 
 
 export function CatalogPreview() {

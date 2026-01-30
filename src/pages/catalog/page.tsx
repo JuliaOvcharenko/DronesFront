@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getAllProducts, Product } from '../../api/allProducts'
-import { ProductMiniCard } from '../../components/ProductMiniCard'
 import styles from './page.module.css'
+import { ProductMiniCard } from '../../components/Product/ProductMiniCard'
+
 
 export function CatalogPage() {
     useEffect(() => {
@@ -138,16 +139,28 @@ export function CatalogPage() {
             </div>
 
             <div className={styles['products-container']}>
-                {isLoading && <p>Завантаження...</p>}
-                
-                {!isLoading && products.length === 0 && (
-                    <p>Товари не знайдено</p>
+
+                {(isLoading || products.length === 0) && (
+                    <div className={styles['found-contain']}>
+                        {isLoading && (
+                            <p className={styles['p-down']}>
+                                Завантаження товарів...
+                            </p>
+                        )}
+
+                        {!isLoading && products.length === 0 && (
+                            <p className={styles['p-not-found']}>
+                                Не вдалося завантажити каталог
+                            </p>
+                        )}
+                    </div>
                 )}
-                
+
                 {!isLoading && products.map(product => (
-                    <ProductMiniCard key={product.id} product={product}/>
+                    <ProductMiniCard key={product.id} product={product} />
                 ))}
             </div>
+
 
             {totalProducts > 0 && (
                 <div className={styles['pagination-container']}>

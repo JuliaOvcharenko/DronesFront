@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('../../assets/fonts/GTWalsheimPro-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
+
 
 .section {
     width: 100%;

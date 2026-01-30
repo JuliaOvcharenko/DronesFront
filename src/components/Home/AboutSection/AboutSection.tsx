@@ -1,5 +1,5 @@
 import styles from './AboutSection.module.css';
-import arrowIcon from '../../assets/icons/strelka.png';
+import arrowIcon from '../../../assets/icons/strelka.png';
 import { useNavigate } from 'react-router-dom';
 
 

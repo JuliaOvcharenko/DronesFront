@@ -1,9 +1,8 @@
+import { AboutSection } from '../../components/Home/AboutSection';
+import { CatalogPreview } from '../../components/Home/CatalogPreview';
+import { HeroSection } from '../../components/Home/HeroSection';
+import { NewArrivals } from '../../components/Home/NewArrivals';
 import styles from './page.module.css';
-
-import { AboutSection } from '../../components/AboutSection';
-import { NewArrivals } from '../../components/NewArrivals';
-import { HeroSection } from '../../components/HeroSection';
-import { CatalogPreview } from '../../components/CatalogPreview';
 
 
 export function HomePage() {

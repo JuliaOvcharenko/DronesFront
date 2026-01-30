@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { IMAGES } from "../../shared/images";
-import { FooterProps } from "../../shared/types";
+import { IMAGES } from "../../../shared/images";
+import { FooterProps } from "../../../shared/types";
 import styles from "./footer.module.css";
-
 
 
 export function Footer(props: FooterProps) {
