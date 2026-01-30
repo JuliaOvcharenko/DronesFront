@@ -3,11 +3,11 @@ import React from 'react';
 
 import { Product } from '../../types/product';
 
-import droneMain from '../../assets/gelicopter.png'; 
-import videoPreview from '../../assets/images/pic1.png';
-import pic1 from '../../assets/images/pic1.png';   
-import pic2 from '../../assets/images/pic2.png';   
-import pic3 from '../../assets/images/512.png';  
+import droneMain from '../../assets/images/products/gelicopter.png'; 
+import videoPreview from '../../assets/images/product/pic1.png';
+import pic1 from '../../assets/images/product/pic1.png';   
+import pic2 from '../../assets/images/product/pic2.png';   
+import pic3 from '../../assets/images/product/512.png';  
 import { ProductHeader } from '../../components/Product/ProductHeader';
 import { InfoBlock } from '../../components/Product/InfoBlock';
 import { CatalogPreview } from '../../components/Home/CatalogPreview';

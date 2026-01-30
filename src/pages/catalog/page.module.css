@@ -1,9 +1,14 @@
 .catalog-container{
     display: flex;
     flex-direction: column;
-    padding: clamp(8.5rem, 9vh, 9.5rem) 20px clamp(5rem, 10vh, 10rem);
-    width: 100%;
     flex-grow: 1;
+    width: 100%;
+    max-width: 1440px;   
+    margin: 0 auto; 
+    padding: 
+        clamp(6vw, 9vw, 9.5vw)  
+        clamp(1vw, 1.5vw, 1.7vw) 
+        clamp(4vw, 10vw, 10vw); 
 }
 
 .catalog-p{
@@ -48,11 +53,16 @@
 }
 
 .products-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items:start;
-    gap: clamp(1.5rem, 2rem, 2.5rem);
-    flex-wrap: wrap;
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: clamp(1.5rem, 2vw, 2.5rem);
+    padding-top: 2%
 }
 
 .pagination-container{

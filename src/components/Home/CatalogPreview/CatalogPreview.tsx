@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './CatalogPreview.module.css';
 import { useNavigate } from 'react-router-dom';
-import defaultImg from '../../../assets/images/catalog1.png';
+import defaultImg from '../../../assets/images/products/catalog1.png';
 import { getProductSuggestions } from '../../../api/products';
 import { Product } from '../../../api/allProducts';
 

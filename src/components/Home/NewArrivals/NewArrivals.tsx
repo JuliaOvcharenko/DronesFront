@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './NewArrivals.module.css';
 import { useNavigate } from 'react-router-dom';
-import bg1 from '../../../assets/images/bg1.png';
-import bg2 from '../../../assets/images/bg2.png';
-import bg3 from '../../../assets/images/bg3.png';
-import Drone1 from '../../../assets/images/drone1.png';
+import bg1 from '../../../assets/images/cardBG/bg1.png';
+import bg2 from '../../../assets/images/cardBG/bg2.png';
+import bg3 from '../../../assets/images/cardBG/bg3.png';
+import Drone1 from '../../../assets/images/products/drone1.png';
 import { getProductSuggestions } from '../../../api/products';
 import { ProductCard } from '../../Product/ProductCard';
 import { Product } from '../../../types/product';

@@ -1,5 +1,5 @@
 import styles from './HeroSection.module.css';
-import droneImage from '../../../assets/gelicopter.png';
+import droneImage from '../../../assets/images/products/gelicopter.png';
 import { useNavigate } from 'react-router-dom';
 
 
