@@ -19,6 +19,8 @@ export function AppRoutes() {
                         {label: "КОШИК", path: "/cart"},
                         {label: "КАБІНЕТ", path: "/account"}]}/>}>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/product/:id" element={<ProductPage />} />
+
                 </Route>
 
                 <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}
@@ -32,7 +34,7 @@ export function AppRoutes() {
                 </Route>
 
                 <Route element={<Layout headerVariant="half" footerVariant="straight"/>}>
-                    <Route path="*" element={<ProductPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
 
                 <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}

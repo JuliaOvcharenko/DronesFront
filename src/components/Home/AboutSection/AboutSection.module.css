@@ -6,6 +6,7 @@
     padding: clamp(5rem, 10vh, 9.3rem) 0;
     display: flex;
     justify-content: center;
+    margin-top: clamp(5rem, 10vh, 9.3rem);
     font-family: 'GT Walsheim Pro', sans-serif;
 }
 

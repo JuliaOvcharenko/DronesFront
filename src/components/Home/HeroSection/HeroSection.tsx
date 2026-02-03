@@ -1,5 +1,5 @@
 import styles from './HeroSection.module.css';
-import droneImage from '../../../assets/images/products/gelicopter.png';
+import { IMAGES } from '../../../shared/images';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -22,7 +22,7 @@ export function HeroSection() {
 
                 <div className={styles["drone-container"]}>
                     <img
-                        src={droneImage}
+                        src={IMAGES.droneImage}
                         alt="DJI Mavic Drone"
                         className={styles["drone-img"]}
                     />

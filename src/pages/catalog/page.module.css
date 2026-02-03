@@ -9,6 +9,7 @@
         clamp(6vw, 9vw, 9.5vw)  
         clamp(1vw, 1.5vw, 1.7vw) 
         clamp(4vw, 10vw, 10vw); 
+    min-height: 100vh;
 }
 
 .catalog-p{
@@ -20,32 +21,49 @@
 }
 
 .filter-container{
+    margin-top: 2rem;
     height: 60px;
     width: fit-content;
     display: flex;
     gap: clamp(1rem, 1.5rem, 2rem)
+    
 }
 
 .filter-button{
-    height: clamp(2.5rem, 3rem, 3.5rem);
-    width: clamp(2.5rem, 3rem, 3.5rem);
-    border-radius: 80px;
+    height: clamp(2.5rem, 4rem, 3.5rem);
+    width: clamp(2.5rem, 4rem, 3.5rem);
+    border-radius: 50%;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #F4F4F4;
     color: #0C122A;
     font-size: calc(0.5vw + 0.8vh);
     cursor: pointer;
+    overflow: hidden;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.filter-button:hover{
+.filter-button:hover {
     background-color: #E7E7EA;
     transform: translateY(-2px);
+    border-color: #d1d1d1;
 }
 
-.filter-button:active {
+
+.filter-icon {
+    width: 100%; 
+}
+
+
+.filter-button.active {
+    background-color: #E0E0E0; 
+    border-color: #0C122A;
     transform: translateY(-1px);
-    background-color: #E7E7EA;
+}
+.filter-button:active {
+    transform: translateY(0);
 }
 
 .filter-button:focus {
@@ -62,7 +80,10 @@
     );
 
     gap: clamp(1.5rem, 2vw, 2.5rem);
-    padding-top: 2%
+    min-height: 60vh;
+    padding-top: 2%;
+    min-height: 70vh; 
+    align-content: start;
 }
 
 .pagination-container{
@@ -75,7 +96,7 @@
 .page-button{
     height: clamp(1.5rem, 2rem, 2.5rem);
     width: clamp(1.5rem, 2rem, 2.5rem);
-    border-radius: 80px;
+    border-radius: 50%;
     border: none;
     background-color: #F4F4F4;
 }
@@ -83,7 +104,7 @@
 .active-page-button{
     height: clamp(1.5rem, 2rem, 2.5rem);
     width: clamp(1.5rem, 2rem, 2.5rem);
-    border-radius: 80px;
+    border-radius: 50%;
     border: none;
     background-color: #F4F4F4;
 }
@@ -93,17 +114,45 @@
     font-size: calc(0.5vw + 0.8vh);
 }
 
-.found-contain{
+.found-contain {
+    grid-column: 1 / -1; 
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
     width: 100%;
-    min-height: clamp(4.5rem, 5rem, 5.5rem)
+    height: 100%;
+    min-height: 18rem;
 }
-
+.page-button:hover:not(:disabled) {
+    background-color: #E0E0E0;
+}
 
 .p-down{
     color: #0C122A;
     font-size: calc(0.5vw + 0.8vh);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Починаємо трохи нижче */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Стаємо на місце */
+    }
+}
+
+.fade-enter {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.p-down {
+    font-size: 18px;
+    color: #666;
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease-out forwards;
 }

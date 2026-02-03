@@ -50,7 +50,8 @@
 }
 
 .visualContainer {
-    margin-top: -15rem;
+    margin-top: -5rem; 
+    
     position: relative;
     width: 100%;
     max-width: clamp(65rem, 100vw, 120rem);
@@ -58,6 +59,7 @@
     justify-content: center;
     align-items: center;
     z-index: 3;
+    margin-bottom: clamp(5rem, 12vh, 12rem);
 }
 
 .imageWrapper {
@@ -78,8 +80,7 @@
 
 .mainImage {
     width: auto;
-    height: clamp(15rem, 40vw, 50rem);
-    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.2));
+    height: clamp(15rem, 35vw, 35rem);
     will-change: transform;
 }
 
@@ -94,22 +95,20 @@
     border-radius: clamp(1rem, 1rem, 2rem);
     box-shadow: 0 1rem 3rem rgba(12, 18, 42, 0.08);
     padding: clamp(1rem, 1.5vw, 1.5rem);
-    width: clamp(12rem, 20vw, 23rem);
+    width: clamp(12rem, 20vw, 19rem);
     text-align: left;
     animation: slideInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s backwards;
 }
 
 .cardHeader {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 0.8rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     width: 100%;
 }
 
 .miniProductImage {
-    width: clamp(3rem, 5vw, 6rem);
+    width: clamp(3rem, 5vw, 5rem);
     height: auto;
     flex-shrink: 0;
     object-fit: contain;
@@ -120,7 +119,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.2rem;
+    gap: 1rem;
 }
 
 .cardTitle {
@@ -253,7 +252,7 @@
 @media (max-width: 68rem) {
     .visualContainer {
         flex-direction: column;
-        margin-top: 0;
+        margin-top: 0; 
     }
 
     .buyCard {
@@ -265,9 +264,5 @@
         width: 90%;
         max-width: 25rem;
         animation: fadeInUp 1s ease-out 0.5s backwards;
-    }
-
-    .visualContainer {
-        margin-top: -5rem;
     }
 }

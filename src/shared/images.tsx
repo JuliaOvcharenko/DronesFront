@@ -8,6 +8,14 @@ import baseFooter from '../assets/images/baseFooter.png';
 import aboutImageMission from '../assets/images/about/aboutImageMission.png';
 import aboutImageTeam from '../assets/images/about/aboutImageTeam.png';
 
+import bg1 from '../assets/images/cardBG/bg1.png';
+import bg2 from '../assets/images/cardBG/bg2.png';
+import bg3 from '../assets/images/cardBG/bg3.png';
+import droneImage from '../assets/images/products/gelicopter.png';
+
+import arrowIcon from '../assets/icons/strelka.png';
+
+import buttonBuy from '../assets/icons/buttonBuy.png';
 
 export const IMAGES = {
     dronesLogo,
@@ -18,5 +26,12 @@ export const IMAGES = {
     dronesFooter,
     baseFooter,
     aboutImageMission,
-    aboutImageTeam
+    aboutImageTeam,
+    bg1,
+    bg2,
+    bg3,
+    droneImage,
+    arrowIcon,
+    buttonBuy
+    
 }

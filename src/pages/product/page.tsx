@@ -1,13 +1,10 @@
-import React from 'react';
-
-
 import { Product } from '../../types/product';
 
-import droneMain from '../../assets/images/products/gelicopter.png'; 
+import droneMain from '../../assets/images/products/gelicopter.png';
 import videoPreview from '../../assets/images/product/pic1.png';
-import pic1 from '../../assets/images/product/pic1.png';   
-import pic2 from '../../assets/images/product/pic2.png';   
-import pic3 from '../../assets/images/product/512.png';  
+import pic1 from '../../assets/images/product/pic1.png';   //це все тестові, потім коли апі підключимо, то будемо тягти з бекенду
+import pic2 from '../../assets/images/product/pic2.png';
+import pic3 from '../../assets/images/product/512.png';
 import { ProductHeader } from '../../components/Product/ProductHeader';
 import { InfoBlock } from '../../components/Product/InfoBlock';
 import { CatalogPreview } from '../../components/Home/CatalogPreview';
@@ -20,7 +17,7 @@ export const ProductPage = () => {
         price: 29900,
         oldPrice: 32500,
         description: "100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери, нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване зондування перешкод 0,1-Lux Nightscape.",
-        image: droneMain, 
+        image: droneMain,
 
         infoBlocks: [
             {
@@ -28,7 +25,7 @@ export const ProductPage = () => {
                 block_order: 1,
                 title: "ВОЛОДІЙТЕ КОЖНИМ КУТОМ",
                 content: "Представляємо вдосконалену систему з трьома камерами, де кожен об'єктив має свої переваги. Створюйте кінематографічні кадри з будь-якого ракурсу.",
-                align: "center", 
+                align: "center",
                 images: []
             },
             {
@@ -36,7 +33,7 @@ export const ProductPage = () => {
                 block_order: 2,
                 title: "ОСНОВНА КАМЕРА 4/3 CMOS",
                 content: "У ретельно розробленій 4/3 CMOS-камері Hasselblad використовується абсолютно новий сенсор. Вона створює захоплюючі 100-мегапіксельні зображення.",
-                align: "right", 
+                align: "right",
                 images: []
             },
             {
@@ -44,7 +41,7 @@ export const ProductPage = () => {
                 block_order: 3,
                 title: "51-ХВ ЧАС ПОЛЬОТУ",
                 content: "Аеродинамічний дизайн та ефективна силова установка забезпечують тривалість польоту до 51 хвилини, що дозволяє вам діяти легко і впевнено.",
-                align: "left", 
+                align: "left",
                 images: []
             },
             {
@@ -58,7 +55,6 @@ export const ProductPage = () => {
         ]
     };
 
-    // Масив картинок у правильному порядку
     const blockImages = [
         videoPreview,
         pic1,
@@ -74,17 +70,17 @@ export const ProductPage = () => {
                 {(testProduct.infoBlocks || [])
                     .sort((a, b) => a.block_order - b.block_order)
                     .map((block, index) => (
-                        <InfoBlock 
-                            key={block.id} 
-                            block={block} 
-                            imageSrc={blockImages[index]} 
-                            isVideo={index === 0} 
+                        <InfoBlock
+                            key={block.id}
+                            block={block}
+                            imageSrc={blockImages[index]}
+                            isVideo={index === 0}
                         />
                     ))
                 }
             </div>
-            
-            <CatalogPreview />
+
+            <CatalogPreview title='Схожі товари' />
         </main>
     );
 };

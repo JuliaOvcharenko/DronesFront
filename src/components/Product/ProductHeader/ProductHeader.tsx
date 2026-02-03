@@ -1,5 +1,5 @@
 import styles from './ProductHeader.module.css';
-import buttonBuy from '../../../assets/icons/buttonBuy.png';
+import { IMAGES } from '../../../shared/images';
 import { Product } from '../../../api/allProducts';
 
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-export const ProductHeader: React.FC<Props> = ({ product }) => {
+export function ProductHeader({ product }: Props) {
     return (
         <section className={styles.section}>
 
@@ -35,7 +35,7 @@ export const ProductHeader: React.FC<Props> = ({ product }) => {
 
                             <img
                                 src={product.image}
-                                alt=""
+                                alt="product"
                                 className={styles.miniProductImage}
                             />
 
@@ -56,7 +56,7 @@ export const ProductHeader: React.FC<Props> = ({ product }) => {
                         </div>
 
                         <div className={styles.containerBuy}>
-                            <img src={buttonBuy} alt="Cart" style={{ width: '3.5rem', height: 'auto' }} />
+                            <img src={IMAGES.buttonBuy} alt="Cart" style={{ width: '4.5rem', height: 'auto' }} />
 
                             <button className={styles.buyButton}>
                                 ЗАМОВИТИ <span>→</span>

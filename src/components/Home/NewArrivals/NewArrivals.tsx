@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './NewArrivals.module.css';
 import { useNavigate } from 'react-router-dom';
-import bg1 from '../../../assets/images/cardBG/bg1.png';
-import bg2 from '../../../assets/images/cardBG/bg2.png';
-import bg3 from '../../../assets/images/cardBG/bg3.png';
-import Drone1 from '../../../assets/images/products/drone1.png';
 import { getProductSuggestions } from '../../../api/products';
 import { ProductCard } from '../../Product/ProductCard';
 import { Product } from '../../../types/product';
-
+import { IMAGES } from '../../../shared/images';
 
 export function NewArrivals() {
     const navigate = useNavigate();
@@ -17,7 +13,7 @@ export function NewArrivals() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    const backgrounds = [bg1, bg2, bg3];
+    const backgrounds = [IMAGES.bg1, IMAGES.bg2, IMAGES.bg3];
     const gradients = [
         "linear-gradient(to bottom, rgba(230, 185, 100, 0) 30%, #E6B964 100%)",
         "linear-gradient(to bottom, rgba(58, 74, 58, 0) 30%, #3A4A3A 100%)",
@@ -73,7 +69,7 @@ export function NewArrivals() {
                 {products.map((product, index) => {
                     const bgImage = backgrounds[index % backgrounds.length];
                     const gradient = gradients[index % gradients.length];
-                    const droneImg = product.image ? product.image : Drone1
+                    const droneImg = product.image ? product.image : IMAGES.droneImage;
 
                     return (
                         <ProductCard

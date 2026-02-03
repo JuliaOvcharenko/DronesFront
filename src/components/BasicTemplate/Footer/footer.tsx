@@ -12,7 +12,7 @@ export function Footer(props: FooterProps) {
     if (footerVariant === "straight" || !hasData) {
         return (
             <footer className={styles.straight}>
-                <img src={IMAGES.dronesFooterLogo} className={styles["watermark-img"]}/>
+                <img src={IMAGES.dronesFooterLogo} className={styles["watermark-img"]} alt="Drones Footer Logo" />
                 <div className={styles["footer-line"]} />
                 <p className={styles["copyright-text"]}>
                     © 2025 Drones Всі права захищені.

@@ -46,7 +46,7 @@
 
 .drone-img {
     width: clamp(17rem, 18rem, 18.5rem);
-    height: clamp(14.5rem, 15rem, 15.5rem);
+
 }
 
 .cart-container p {

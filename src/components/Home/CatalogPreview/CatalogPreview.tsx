@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import styles from './CatalogPreview.module.css';
 import { useNavigate } from 'react-router-dom';
-import defaultImg from '../../../assets/images/products/catalog1.png';
+import { IMAGES } from '../../../shared/images';    
 import { getProductSuggestions } from '../../../api/products';
 import { Product } from '../../../api/allProducts';
 
+interface CatalogPreviewProps {
+    title?: string; 
+}
 
-export function CatalogPreview() {
+
+export function CatalogPreview({ title = "КАТАЛОГ" }: CatalogPreviewProps) {
     const navigate = useNavigate();
     const [products, setProducts] = useState<Product[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -16,7 +20,7 @@ export function CatalogPreview() {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-
+                // Тут можна також додати логіку якщо це "Схожі товари", 
                 const data = await getProductSuggestions('popular');
                 setProducts(data);
             } catch (err: any) {
@@ -33,7 +37,7 @@ export function CatalogPreview() {
     if (isLoading) {
         return (
             <section className={styles.section}>
-                <div className={styles.loading}>Завантаження каталогу...</div>
+                <div className={styles.loading}>Завантаження...</div>
             </section>
         );
     }
@@ -41,7 +45,7 @@ export function CatalogPreview() {
     if (error) {
         return (
             <section className={styles.section}>
-                <h2 className={styles.title}>КАТАЛОГ</h2>
+                <h2 className={styles.title}>{title}</h2>
                 <div style={{ color: 'red', textAlign: 'center', marginTop: '20px' }}>
                     {error}
                 </div>
@@ -51,11 +55,11 @@ export function CatalogPreview() {
 
     return (
         <section className={styles["section"]}>
-            <h2 className={styles["title"]}>КАТАЛОГ</h2>
+            <h2 className={styles["title"]}>{title}</h2>
 
             <div className={styles["grid"]}>
                 {products.map((item) => {
-                    const imageSrc = item.image ? item.image : defaultImg;
+                    const imageSrc = item.image ? item.image : IMAGES.droneImage;
 
                     return (
                         <div key={item.id} className={styles["card"]}>

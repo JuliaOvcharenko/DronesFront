@@ -3,7 +3,7 @@ import styles from "./page.module.css"
 
 
 export function NotFoundPage() {
-    document.body.className = "white"
+    document.body.className = "grey"
     const navigate = useNavigate()
 
     
