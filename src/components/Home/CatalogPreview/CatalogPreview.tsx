@@ -20,8 +20,8 @@ export function CatalogPreview({ title = "КАТАЛОГ" }: CatalogPreviewProps
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                // Тут можна також додати логіку якщо це "Схожі товари", 
                 const data = await getProductSuggestions('popular');
+                console.log("Кількість товарів з бекенду:", data.length);
                 setProducts(data);
             } catch (err: any) {
                 console.error(err);
@@ -62,7 +62,7 @@ export function CatalogPreview({ title = "КАТАЛОГ" }: CatalogPreviewProps
                     const imageSrc = item.image ? item.image : IMAGES.droneImage;
 
                     return (
-                        <div key={item.id} className={styles["card"]}>
+                        <div key={item.id} className={styles["card"]} onClick={() => navigate(`/product/${item.id}`)}>
                             <div className={styles["image-wrapper"]}>
                                 <img src={imageSrc} alt={item.title} className={styles["img"]} />
                             </div>

@@ -136,11 +136,11 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Починаємо трохи нижче */
+        transform: translateY(20px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Стаємо на місце */
+        transform: translateY(0); 
     }
 }
 

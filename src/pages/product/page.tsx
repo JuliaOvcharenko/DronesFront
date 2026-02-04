@@ -1,83 +1,83 @@
-import { Product } from '../../types/product';
-
-import droneMain from '../../assets/images/products/gelicopter.png';
-import videoPreview from '../../assets/images/product/pic1.png';
-import pic1 from '../../assets/images/product/pic1.png';   //це все тестові, потім коли апі підключимо, то будемо тягти з бекенду
-import pic2 from '../../assets/images/product/pic2.png';
-import pic3 from '../../assets/images/product/512.png';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { FullProduct, getProductById } from '../../api/product';
 import { ProductHeader } from '../../components/Product/ProductHeader';
 import { InfoBlock } from '../../components/Product/InfoBlock';
 import { CatalogPreview } from '../../components/Home/CatalogPreview';
 
+const BASE_URL = 'http://localhost:8000';
+
 export const ProductPage = () => {
+    const { id } = useParams<{ id: string }>(); 
+    const [product, setProduct] = useState<FullProduct | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const testProduct: Product = {
-        id: 1,
-        title: "DJI MINI 4 PRO",
-        price: 29900,
-        oldPrice: 32500,
-        description: "100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери, нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване зондування перешкод 0,1-Lux Nightscape.",
-        image: droneMain,
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        if (!id) return;
+        setIsLoading(true);
+        getProductById(id)
+            .then(data => setProduct(data))
+            .catch(e => console.error(e))
+            .finally(() => setIsLoading(false));
+    }, [id]);
 
-        infoBlocks: [
-            {
-                id: 1,
-                block_order: 1,
-                title: "ВОЛОДІЙТЕ КОЖНИМ КУТОМ",
-                content: "Представляємо вдосконалену систему з трьома камерами, де кожен об'єктив має свої переваги. Створюйте кінематографічні кадри з будь-якого ракурсу.",
-                align: "center",
-                images: []
-            },
-            {
-                id: 2,
-                block_order: 2,
-                title: "ОСНОВНА КАМЕРА 4/3 CMOS",
-                content: "У ретельно розробленій 4/3 CMOS-камері Hasselblad використовується абсолютно новий сенсор. Вона створює захоплюючі 100-мегапіксельні зображення.",
-                align: "right",
-                images: []
-            },
-            {
-                id: 3,
-                block_order: 3,
-                title: "51-ХВ ЧАС ПОЛЬОТУ",
-                content: "Аеродинамічний дизайн та ефективна силова установка забезпечують тривалість польоту до 51 хвилини, що дозволяє вам діяти легко і впевнено.",
-                align: "left",
-                images: []
-            },
-            {
-                id: 4,
-                block_order: 4,
-                title: "ДО 512 ГБ ВБУДОВАНОЇ ПАМ'ЯТІ",
-                content: "Стандартна версія DJI Mini 4 Pro поставляється з 64 ГБ вбудованої пам'яті. Комплектації Creator Combo можуть мати до 512 ГБ високошвидкісної пам'яті.",
-                align: "center",
-                images: []
-            }
-        ]
+    if (isLoading) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Завантаження...</div>;
+    if (!product) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Товар не знайдено</div>;
+
+    // Універсальна функція для картинок та відео
+    const getFullUrl = (path?: string | null) => {
+        if (!path) return undefined;
+        if (path.startsWith('http')) return path;
+        return `${BASE_URL}/${path}`;
     };
 
-    const blockImages = [
-        videoPreview,
-        pic1,
-        pic2,
-        pic3
-    ];
+    // Адаптуємо дані під хедер
+    const headerData = {
+        id: product.id,
+        title: product.name, 
+        price: product.price, 
+        oldPrice: product.discount > 0 ? (product.price + product.discount) : undefined,
+        description: product.description,
+        image: getFullUrl(product.mainImage?.image) || '', 
+        infoBlocks: []
+    };
 
     return (
         <main style={{ backgroundColor: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
-            <ProductHeader product={testProduct} />
+            <ProductHeader product={headerData as any} />
 
             <div style={{ paddingBottom: '100px' }}>
-                {(testProduct.infoBlocks || [])
-                    .sort((a, b) => a.block_order - b.block_order)
-                    .map((block, index) => (
-                        <InfoBlock
-                            key={block.id}
-                            block={block}
-                            imageSrc={blockImages[index]}
-                            isVideo={index === 0}
-                        />
-                    ))
-                }
+                {product.infoBlocks && product.infoBlocks.length > 0 ? (
+                    product.infoBlocks
+                        .sort((a: any, b: any) => a.blockOrder - b.blockOrder)
+                        .map((block: any) => {
+                            
+                            const blockImg = block.images?.[0]?.image;
+                            const imageSrc = getFullUrl(blockImg);
+
+                            const videoUrl = getFullUrl(block.video);
+
+                            return (
+                                <InfoBlock
+                                    key={block.id}
+                                    block={{
+                                        id: block.id,
+                                        title: block.title,
+                                        content: block.content,
+                                        align: block.align,
+                                        block_order: block.blockOrder,
+                                        
+                                        video: videoUrl, 
+                                        images: []
+                                    }}
+                                    imageSrc={imageSrc || ''}
+                                    
+                                    isVideo={Boolean(videoUrl)} 
+                                />
+                            );
+                        })
+                ) : null}
             </div>
 
             <CatalogPreview title='Схожі товари' />

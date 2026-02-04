@@ -18,7 +18,7 @@ interface BackendProduct {
 export const getProductSuggestions = async (
     type: 'new' | 'popular'
 ): Promise<Product[]> => {
-    const queryParam = type === 'new' ? 'isNew=true' : 'popular=true';
+    const queryParam = type === 'new' ? 'isNew=true' : 'popularity=true';
     const url = `${BASE_URL}/products/suggestions?${queryParam}`;
 
     try {

@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export function AboutPage(){
     document.body.className = "white"
-    
+    window.scrollTo(0, 0);
 
     return <div className = {styles["about-container"]}>
         <section className={styles["about"]}>

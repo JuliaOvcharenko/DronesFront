@@ -6,11 +6,7 @@ import styles from './page.module.css'
 import { ProductMiniCard } from '../../components/Product/ProductMiniCard'
 
 export function CatalogPage() {
-    useEffect(() => {
-        document.body.className = 'white'
-        return () => { document.body.className = '' }
-    }, [])
-
+    document.body.className = 'white'
     const params = useParams()
     const pageFromUrl = params.page
     const navigate = useNavigate()
