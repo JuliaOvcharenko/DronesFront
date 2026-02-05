@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import styles from './ProductMiniCard.module.css'
 import { Product } from '../../../types/product';
+import { IMAGES } from '../../../shared/images';
+
 
 interface ProductMiniCardProps {
     product: Product
 }
 
+
 export function ProductMiniCard({ product }: ProductMiniCardProps) {
     return (
-        // Link робить всю картку клікабельною і веде на /product/:id
         <Link to={`/product/${product.id}`} className={styles['card-link']}>
             
             <div className={styles['cart-container']}>
@@ -22,11 +24,9 @@ export function ProductMiniCard({ product }: ProductMiniCardProps) {
                     <div className={styles["price-wrapper"]}>
                         {product.oldPrice ? (
                             <>
-                                {/* Стара ціна (сіра, перекреслена) */}
                                 <span className={styles["old-price"]}>
                                     {product.oldPrice.toLocaleString()} ₴
                                 </span>
-                                {/* Нова ціна (червона) */}
                                 <span className={styles["price-discount"]}>
                                     {product.price.toLocaleString()} ₴
                                 </span>
@@ -46,7 +46,7 @@ export function ProductMiniCard({ product }: ProductMiniCardProps) {
                         console.log('Add to cart:', product.id);
                     }}
                 >
-                    🛒
+                    <img src={IMAGES.cartImage}/>
                 </button>
             </div>
         </Link>

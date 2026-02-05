@@ -82,7 +82,7 @@
 }
 
 .price-discount {
-    color: #D84226; /* Колір з вашого скріншоту */
+    color: #D84226;
 }
 
 
@@ -95,7 +95,6 @@
     transform: translateY(1rem);
     transition: all 0.3s ease;
 
-    background-color: #0C122A;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -118,5 +117,5 @@
 }
 
 .buy-button:hover {
-    background-color: #D84226;
+    background-color: #faf5ff;
 }

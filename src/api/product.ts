@@ -35,7 +35,6 @@ export interface FullProduct {
     }[];
 }
 
-// Функція отримання одного товару
 export async function getProductById(id: string): Promise<FullProduct | null> {
     try {
         const response = await fetch(`${BASE_URL}/products/${id}`);
