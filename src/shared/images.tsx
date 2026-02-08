@@ -15,6 +15,9 @@ import arrowIcon from '../assets/icons/strelka.png';
 import buttonBuy from '../assets/icons/buttonBuy.png';
 import cartImage from '../assets/icons/cartImage.png';
 
+import passTrue from '../assets/icons/passTrue.svg'
+import passFalse from '../assets/icons/passFalse.svg'
+
 
 
 export const IMAGES = {
@@ -33,5 +36,7 @@ export const IMAGES = {
     droneImage,
     arrowIcon,
     buttonBuy,
-    cartImage
+    cartImage,
+    passFalse,
+    passTrue
 }

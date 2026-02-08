@@ -1,7 +1,5 @@
+import { BASE_URL } from "../shared/api/baseUrl";
 import { Product, InfoBlock } from "../types/product"; 
-
-const BASE_URL = 'http://127.0.0.1:8000';
-
 
 interface BackendProduct {
     id: number;
