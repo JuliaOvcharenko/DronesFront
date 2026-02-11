@@ -5,6 +5,7 @@ import { AboutPage } from "../pages/about";
 import { HomePage } from "../pages/home";
 import { CatalogPage } from "../pages/catalog";
 import { ProductPage } from "../pages/product";
+import { ContactsPage } from "../pages/contacts/page";
 
 
 export function AppRoutes() {
@@ -45,6 +46,16 @@ export function AppRoutes() {
                         {label: "КОШИК", path: "/cart"},
                         {label: "КАБІНЕТ", path: "/account"}]}/>}>
                     <Route path="/catalog/:page?" element={<CatalogPage />} />
+                </Route>
+
+                <Route element={<Layout headerVariant="full" footerVariant="rounded" bigNumbers={["1K+", "1.5K+", "24/7"]} numberDescribtion={["Успішних відправок", "Задоволених клієнтів", "Підтримка клієнтів"]}
+                    links={[
+                        {label: "КАТАЛОГ", path: "/catalog"},
+                        {label: "ПРО НАС", path: "/about"},
+                        {label: "КОНТАКТИ", path: "/contacts"},
+                        {label: "КОШИК", path: "/cart"},
+                        {label: "КАБІНЕТ", path: "/account"}]}/>}>
+                    <Route path="/contacts" element={<ContactsPage />} />
                 </Route>
                   
             </Routes>

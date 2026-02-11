@@ -14,6 +14,13 @@ import droneImage from '../assets/images/products/gelicopter.png';
 import arrowIcon from '../assets/icons/strelka.png';
 import buttonBuy from '../assets/icons/buttonBuy.png';
 import cartImage from '../assets/icons/cartImage.png';
+import phoneIcon from '../assets/icons/phoneIcon.png';
+import emailIcon from '../assets/icons/emailIcon.png';
+import schedueIcon from '../assets/icons/schedueIcon.png';
+import mapDotIcon from '../assets/icons/mapDotIcon.png';
+import telegramIcon from '../assets/icons/telegramIcon.png';
+import instagramIcon from '../assets/icons/instagramIcon.png';
+import facebookIcon from '../assets/icons/facebookIcon.png';
 
 
 
@@ -33,5 +40,12 @@ export const IMAGES = {
     droneImage,
     arrowIcon,
     buttonBuy,
-    cartImage
+    cartImage,
+    phoneIcon,
+    emailIcon,
+    schedueIcon,
+    mapDotIcon,
+    telegramIcon,
+    instagramIcon,
+    facebookIcon
 }

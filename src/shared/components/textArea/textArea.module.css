@@ -1,0 +1,42 @@
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.4rem, 0.6vw, 0.8rem);
+}
+
+.label {
+    font-size: clamp(0.75rem, 0.95vw, 0.9rem);
+    color: #0C122A;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 500
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: clamp(3.5rem, 4vw, 4.5rem);
+    padding: 0 clamp(0.8rem, 1vw, 1.2rem);
+    border-radius: clamp(0.2rem, 0.3vw, 0.4rem);
+    border: 1px solid #CED0D4;
+    font-size: clamp(0.85rem, 0.95vw, 1rem);
+    color: #0C122A;
+    background-color: white;
+    line-height: clamp(2.3rem, 2.8vw, 3.3rem);
+}
+
+textarea:focus {
+    outline: none;
+    border: 2px solid #c7c9cc; 
+}
+
+textarea::placeholder {
+    font-size: clamp(0.8em, 1em, 1.2em);
+    color: #0C122A;
+    letter-spacing: 80%;
+    line-height: clamp(2.3rem, 2.8vw, 3.3rem);
+    font-weight: 400
+}

@@ -25,9 +25,12 @@ export function Header(props: HeaderProps){
                     </Link>
                 </div>
 
-                <div className = {styles['logo-container']}>
-                    <img src = {IMAGES.dronesLogo} className = {styles['drones-logo']}/>
+                <div className={styles['logo-container']}>
+                    <Link to="/" className={styles[headerVariant + "Head"]} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <img src={IMAGES.dronesLogo} className={styles['drones-logo']} alt="Logo"/>
+                    </Link>
                 </div>
+
             
                 <div className = {styles["action-icons"]}>
                     <div onClick={() => {
