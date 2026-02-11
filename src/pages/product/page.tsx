@@ -4,8 +4,7 @@ import { FullProduct, getProductById } from '../../api/product';
 import { ProductHeader } from '../../components/Product/ProductHeader';
 import { InfoBlock } from '../../components/Product/InfoBlock';
 import { ProductSuggestions } from '../../components/Product/ProductSuggestions';
-
-const BASE_URL = 'http://localhost:8000';
+import { BASE_URL } from '../../shared/api/baseUrl';
 
 
 export const ProductPage = () => {

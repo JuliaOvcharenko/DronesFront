@@ -1,7 +1,5 @@
+import { BASE_URL } from "../shared/api/baseUrl";
 import { Product } from "../types/product";
-
-
-const BASE_URL = 'http://localhost:8000';
 
 export interface Category {
     id: number;

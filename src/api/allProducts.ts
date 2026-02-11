@@ -1,3 +1,5 @@
+import { BASE_URL } from "../shared/api/baseUrl";
+
 export interface BackendProduct {
     id: number;
     name: string;
@@ -26,7 +28,7 @@ export interface PaginatedProducts {
     total: number;
 }
 
-const BASE_URL = 'http://127.0.0.1:8000';
+
 
 export const getAllProducts = async ({page = 1, limit = 16,}: {page?: number; limit?: number}): Promise<PaginatedProducts> => {
     try {

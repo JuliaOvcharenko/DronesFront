@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './ProductSuggestions.module.css';
 import { useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../../shared/images';
+import { BASE_URL } from '../../../shared/api/baseUrl';
 
 interface SameAsPreviewProps {
     titlePage: string;
@@ -16,8 +17,6 @@ export interface Product {
     oldPrice?: number;
     mainImage?: { image: string } | null; 
 }
-
-const BASE_URL = 'http://127.0.0.1:8000';
 
 
 const getFullUrl = (path?: string | null) => {

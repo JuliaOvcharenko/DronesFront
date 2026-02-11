@@ -22,6 +22,9 @@ import telegramIcon from '../assets/icons/telegramIcon.png';
 import instagramIcon from '../assets/icons/instagramIcon.png';
 import facebookIcon from '../assets/icons/facebookIcon.png';
 
+import passTrue from '../assets/icons/passTrue.svg'
+import passFalse from '../assets/icons/passFalse.svg'
+
 
 
 export const IMAGES = {
@@ -47,5 +50,7 @@ export const IMAGES = {
     mapDotIcon,
     telegramIcon,
     instagramIcon,
-    facebookIcon
+    facebookIcon,
+    passFalse,
+    passTrue
 }
