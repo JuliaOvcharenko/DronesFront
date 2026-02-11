@@ -3,7 +3,8 @@ import { IMAGES } from "../../../shared/images"
 import { HeaderProps } from "../../../shared/types"
 import styles from "./header.module.css"
 import { useState } from "react"
-import { AuthModal } from "../../Auth/AuthModal"
+import { AuthModal } from "../../../shared/components/AuthModal"
+
 
 export function Header(props: HeaderProps) {
     const { headerVariant } = props
