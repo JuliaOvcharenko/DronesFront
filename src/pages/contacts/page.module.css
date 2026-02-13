@@ -6,11 +6,10 @@
     max-width: 2440px;   
     margin: 0 auto; 
     padding: 
-        clamp(6vw, 9vw, 9.5vw)  
+        clamp(5vw, 8vw, 8.5vw)  
         clamp(1vw, 1.5vw, 1.7vw) 
         clamp(4vw, 10vw, 10vw); 
     min-height: 100vh;
-    
     align-items:center
 }
 
@@ -95,6 +94,22 @@
     gap: clamp(0.5rem, 1rem, 1.5rem);
     justify-content:space-between;
     flex-direction: column;
+}
+
+.fieldError{
+    padding-top: clamp(0.5rem, 0.7rem, 1rem);
+    color: red;
+    font-size: clamp(0.5rem, 0.7rem, 1rem)
+}
+
+.errorMessage{
+    color: red;
+    font-size: clamp(0.5rem, 0.7rem, 1rem)
+}
+
+.successMessage{
+    color: #a9b1b8;
+    font-size: clamp(0.5rem, 0.7rem, 1rem)
 }
 
 .buttonConfirm{

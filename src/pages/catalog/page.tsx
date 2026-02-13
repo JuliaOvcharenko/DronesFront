@@ -71,7 +71,6 @@ export function CatalogPage() {
     }
 
     useEffect(() => {
-        // Піднімаємо скрол на самий верх плавно
         window.scrollTo({ top: 0, behavior: 'smooth' })
 
         const page = Number(pageFromUrl) || 1

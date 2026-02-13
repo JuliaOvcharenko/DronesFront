@@ -16,7 +16,7 @@
 }
 
 textarea {
-    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     height: clamp(3.5rem, 4vw, 4.5rem);
     padding: 0 clamp(0.8rem, 1vw, 1.2rem);
