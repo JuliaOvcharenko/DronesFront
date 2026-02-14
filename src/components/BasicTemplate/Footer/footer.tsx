@@ -2,12 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../../shared/images";
 import { FooterProps } from "../../../shared/types";
 import styles from "./footer.module.css";
+import { useEffect } from "react";
 
 
 export function Footer(props: FooterProps) {
     const { footerVariant, links, bigNumbers, numberDescribtion } = props;
     const navigate = useNavigate();
     const hasData = links?.length || bigNumbers?.length || numberDescribtion?.length;
+
+    useEffect(() => {
+            document.body.className = 'white'
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        }, [])
 
     if (footerVariant === "straight" || !hasData) {
         return (

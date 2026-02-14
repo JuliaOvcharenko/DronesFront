@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Input } from "../../shared/components/input"
 import { TextArea } from "../../shared/components/textArea"
 import { IMAGES } from "../../shared/images"
@@ -7,8 +7,6 @@ import styles from "./page.module.css"
 
 
 export function ContactsPage(){
-    document.body.className = 'white'
-    
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
@@ -21,6 +19,11 @@ export function ContactsPage(){
     const [successMessage, setSuccessMessage] = useState('')
     
     const [sendEmail, {isLoading, error}] = useSendEmail()
+
+    useEffect(() => {
+        document.body.className = 'white'
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [])
 
     const validatePhone = (phoneNumber: string): boolean => {
         const phoneRegex = /^\+\d+$/
@@ -135,7 +138,7 @@ export function ContactsPage(){
                     </div>
                     
                     <div>
-                        <Input type="text" placeholder="Телефон" label="+ 38 0" value={phone} onChange={(e) => setPhone(e.target.value)}></Input>
+                        <Input type="text" placeholder="+ 38 0" label="Телефон" value={phone} onChange={(e) => setPhone(e.target.value)}></Input>
                         {phoneError && <p className={styles.fieldError}>{phoneError}</p>}
                     </div>
                     

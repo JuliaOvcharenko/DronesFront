@@ -1,10 +1,14 @@
+import { useEffect } from "react"
 import { IMAGES } from "../../shared/images"
 import styles from './page.module.css'
 
 
 export function AboutPage(){
     document.body.className = "white"
-    window.scrollTo(0, 0);
+    useEffect(() => {
+            document.body.className = 'white'
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        }, [])
 
     return <div className = {styles["about-container"]}>
         <section className={styles["about"]}>
@@ -30,9 +34,9 @@ export function AboutPage(){
                     <p className = {styles["text-mission"]}>
                         Допомагати тим, хто стоїть на передовій — у прямому й переносному сенсі.
                     </p>
-                    <p className = {`${styles["text-mission"]} ${styles['text-indent']}`}>
+                    <h1 className = {`${styles["text-mission"]} ${styles['text-indent']}`}>
                         Ми обираємо тільки надійну техніку, яку перевіряємо самі. Наша мета — якість, простота, і підтримка на кожному етапі: від покупки до використання.
-                    </p>
+                    </h1>
                 </div>
                
             </div>

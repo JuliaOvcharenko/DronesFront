@@ -1,0 +1,1 @@
+export { ProfileContactsPage } from './page';

@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './AuthModal.module.css';
 import { IMAGES } from '../../images';
-import { loginUser, registerUser } from '../../api/auth';
+import { useAuth } from './AuthContext';
+import { loginUser, registerUser } from '../../../api/getUser';
+
 
 interface AuthModalProps {
     isOpen: boolean;
     onClose: () => void;
+    onSuccess?: () => void;
     initialView?: 'login' | 'register';
 }
 
 type ViewState = 'login' | 'register' | 'success';
 
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialView = 'login' }) => {
+export function AuthModal({ 
+    isOpen, 
+    onClose, 
+    onSuccess,
+    initialView = 'login' 
+}: AuthModalProps) {
+    const { login } = useAuth();
     const [view, setView] = useState<ViewState>(initialView);
-
 
     useEffect(() => {
         if (isOpen) {
@@ -27,12 +35,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
     }, [isOpen, initialView]);
 
     const [showPassword, setShowPassword] = useState(false);
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -49,7 +55,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
         setError(null);
 
         if (view === 'register') {
-            // РЕЄСТРАЦІЯ
             if (!name || !email || !password || !confirmPassword) {
                 setError('Будь ласка, заповніть всі поля');
                 return;
@@ -65,7 +70,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
 
             try {
                 setIsLoading(true);
-                // Виклик API реєстрації
+                
                 await registerUser({
                     name,
                     email,
@@ -75,16 +80,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
 
                 setView('success');
             } catch (err: any) {
-                console.error(err);
                 setError(err.message || 'Помилка реєстрації');
             } finally {
                 setIsLoading(false);
             }
 
         } else {
-            // LOGIN
-
-            // Валідація
             if (!email || !password) {
                 setError('Будь ласка, введіть email та пароль');
                 return;
@@ -93,19 +94,20 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
             try {
                 setIsLoading(true);
 
-                // API
                 const data = await loginUser({
                     email,
                     password
                 });
 
-                // Збереження токена
-                localStorage.setItem('token', data.token);
+                await login(data.token);
 
-                onClose();
+                if (onSuccess) {
+                    onSuccess();
+                } else {
+                    onClose();
+                }
 
             } catch (err: any) {
-                console.error(err);
                 setError(err.message || 'Невірний логін або пароль');
             } finally {
                 setIsLoading(false);
@@ -116,10 +118,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
     return (
         <div className={styles.overlay} onClick={handleOverlayClick}>
             <div className={styles.modal}>
-
-                <button className={styles.closeBtn} onClick={onClose}>
-                    ✕
-                </button>
+                <button className={styles.closeBtn} onClick={onClose}>✕</button>
 
                 {view !== 'success' && (
                     <>
@@ -144,7 +143,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
                         {error && <div className={styles.errorMessage}>{error}</div>}
 
                         <form className={styles.form} onSubmit={handleSubmit}>
-                            {/* Тільки для реєстрації */}
                             {view === 'register' && (
                                 <div className={styles.inputGroup}>
                                     <label className={styles.label}>Ім'я</label>
@@ -192,7 +190,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
                                 </div>
                             </div>
 
-                            {/* Підтвердження пароля */}
                             {view === 'register' && (
                                 <div className={styles.inputGroup}>
                                     <label className={styles.label}>Підтвердження пароля</label>
@@ -223,10 +220,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
                                     Забули пароль?
                                 </button>
                             ) : (
-                                <div
-                                    className={styles.switchLink}
-                                    onClick={() => setView('login')}
-                                >
+                                <div className={styles.switchLink} onClick={() => setView('login')}>
                                     Вже є акаунт? <span>Увійти</span>
                                 </div>
                             )}
@@ -254,17 +248,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
                     </>
                 )}
 
-                {/* Успішна реєстрація */}
                 {view === 'success' && (
                     <div className={styles.successContainer}>
                         <h2 className={styles.successTitle}>Реєстрація</h2>
                         <p className={styles.successText}>Акаунт успішно створено! Будь ласка, увійдіть.</p>
-
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                             <button
                                 className={`${styles.btn} ${styles.btnSubmit}`}
                                 style={{ maxWidth: '200px' }}
-                                onClick={() => setView('login')} // Перекидаємо на логін
+                                onClick={() => setView('login')}
                             >
                                 УВІЙТИ
                             </button>
@@ -274,4 +266,4 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialVi
             </div>
         </div>
     );
-};
+}
