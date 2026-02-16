@@ -1,119 +1,90 @@
-.pageContainer {
+.mainContainer {
     display: flex;
+    flex-grow: 1;
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: clamp(2rem, 4vw, 6rem) clamp(1rem, 2vw, 3rem);
-    gap: clamp(2rem, 4vw, 6rem);
+    max-width: 2440px;   
+    margin: 0 auto; 
+    padding: 
+        clamp(9vw, 10vw, 10.5vw)  
+        clamp(2vw, 2.5vw, 2.7vw) 
+        clamp(4vw, 10vw, 10vw); 
     min-height: 100vh;
 }
 
-.sidebar {
+.leftContainer{
     display: flex;
-    flex-direction: column;
-    gap: clamp(1rem, 1.5vw, 2rem);
-    width: clamp(15rem, 20vw, 18rem);
-    padding: clamp(1.5rem, 2vw, 2.5rem);
+    flex-grow: 1;
+    max-width: 550px;
+    flex-direction:column;
+    gap: clamp(1.8rem, 2.3rem, 2.8rem);
+    position: relative;
 }
 
-.sidebarTitle {
-    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-    font-weight: 600;
+.accountText{
     color: #0C122A;
-    letter-spacing: 0.05em;
-    margin-bottom: clamp(0.5rem, 1vw, 1rem);
-}
-
-.menuItem {
-    padding: clamp(0.5rem, 0.8vw, 1rem) 0;
-    cursor: pointer;
-}
-
-.menuItemActive {
-    font-size: clamp(0.85rem, 1vw, 0.95rem);
-    font-weight: 500;
-    color: #0C122A;
-    letter-spacing: 0.02em;
-}
-
-.menuItemText {
-    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    font-size: clamp(1rem, 1.5rem, 1.8rem);
+    letter-spacing: 100%;
     font-weight: 400;
-    color: #6D717F;
-    letter-spacing: 0.02em;
-    transition: color 0.2s ease;
 }
 
-.menuItemText:hover {
-    color: #0C122A;
-}
-
-.menuItemExit {
-    margin-top: auto;
-    padding-top: clamp(1rem, 2vw, 2rem);
-    cursor: pointer;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: clamp(1.5rem, 2vw, 2.5rem);
-}
-
-.contentTitle {
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    font-weight: 500;
-    color: #0C122A;
-}
-
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.2rem, 1.8vw, 2rem);
-    max-width: clamp(29.5rem, 30rem, 30.5rem);
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.3rem, 0.5vw, 0.7rem);
-}
-
-.fieldError {
-    padding-top: clamp(0.3rem, 0.5vw, 0.7rem);
-    color: #e74c3c;
-    font-size: clamp(0.75rem, 0.9vw, 0.85rem);
-}
-
-.successMessage {
-    color: #27ae60;
-    font-size: clamp(0.85rem, 1vw, 0.95rem);
-    padding: clamp(0.8rem, 1vw, 1.2rem);
-    background: #d4edda;
-    border-radius: clamp(4px, 0.5vw, 8px);
-}
-
-.buttonSave {
-    background-color: #0C122A;
-    width: clamp(10rem, 12vw, 14rem);
-    height: clamp(2.5rem, 3vw, 3.5rem);
-    color: white;
-    cursor: pointer;
+.logoutButton{
     border: none;
-    border-radius: 100px;
-    font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+    background: none;
+    cursor: pointer;
+    width: 1%;
+    color: #9EA0AA;
+    font-size: clamp(0.6rem, 0.8rem, 1.2rem);
+    font-weight: 400;
+}
+
+.textLeft{
+    font-size: clamp(0.6rem, 0.8rem, 1.2rem);
     font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-top: clamp(0.5rem, 1vw, 1rem);
-    transition: background-color 0.2s ease;
+    color: #9EA0AA;
+    cursor: pointer;
+
+}
+.contactsDataLink{
+    color: #0C122A;
+    font-weight: 500;
 }
 
-.buttonSave:hover:not(:disabled) {
-    background-color: #1a2344;
+hr{
+    width: 45%;
+    border-top: clamp(0.001rem, 0.002rem, 0.003rem) solid #CDD5DD;
 }
 
-.buttonSave:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+.rightContainer{
+    display: flex;
+    width: 50%;
+    gap: clamp(1rem, 1.5rem, 1.8rem);
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.contactsDataBlock{
+    color: #0C122A;
+    font-size: clamp(1rem, 1.5rem, 2rem)
+}
+
+.inputsContainer{
+    display: flex;
+    gap: clamp(0.5rem, 1rem, 1.5rem);
+    justify-content:space-between;
+    flex-direction: column;
+}
+
+.saveDataButton{
+    border: 0.1rem #9EA0AA solid;
+    background: none;
+    height: clamp(2rem, 2.5rem, 3rem);
+    width: clamp(8.5rem, 8.5rem, 9rem);
+    border-radius: 20px;
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
+    color: #9EA0AA;
+    font-weight: 500;
+    letter-spacing: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center
 }

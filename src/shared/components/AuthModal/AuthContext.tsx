@@ -6,7 +6,7 @@ import { BASE_URL } from '../../api/baseUrl';
 interface User {
     id: number;
     username: string;
-    lastname: string;
+    lastname: string
     patronymic: string;
     email: string;
     birthDate: string;
