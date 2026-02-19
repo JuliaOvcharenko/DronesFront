@@ -5,10 +5,11 @@ import { Product } from '../../../api/allProducts';
 
 interface Props {
     product: Product;
+    onAddToCart: () => void;
 }
 
 
-export function ProductHeader({ product }: Props) {
+export function ProductHeader({ product , onAddToCart}: Props) {
     return (
         <section className={styles.section}>
 
@@ -58,7 +59,7 @@ export function ProductHeader({ product }: Props) {
                         <div className={styles.containerBuy}>
                             <img src={IMAGES.buttonBuy} alt="Cart" style={{ width: '4.5rem', height: 'auto' }} />
 
-                            <button className={styles.buyButton}>
+                            <button className={styles.buyButton} onClick={onAddToCart}>
                                 ЗАМОВИТИ <span>→</span>
                             </button>
                         </div>

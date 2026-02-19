@@ -1,18 +1,19 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { IMAGES } from "../../../shared/images"
 import { HeaderProps } from "../../../shared/types"
 import styles from "./header.module.css"
-import { useEffect, useState } from "react"
 import { AuthModal } from "../../../shared/components/AuthModal/AuthModal"
 import { useAuth } from "../../../shared/components/AuthModal"
-
-
+import { useCart } from '../../../shared/context/CartContext'
 
 export function Header(props: HeaderProps) {
     const { headerVariant } = props
     const navigate = useNavigate()
     const location = useLocation() 
     const [isAuthOpen, setIsAuthOpen] = useState(false)
+
+    const { totalItems, openCart } = useCart()
     const { isAuthenticated } = useAuth()
 
     useEffect(() => {
@@ -57,8 +58,18 @@ export function Header(props: HeaderProps) {
                     </div>
 
                     <div className={styles["action-icons"]}>
-                        <div onClick={() => navigate("/cart")} style={{ cursor: "pointer" }}>
+                        <div 
+                            className={styles.cartWrapper} 
+                            onClick={openCart} 
+                            style={{ cursor: "pointer" }}
+                        >
                             <img src={IMAGES.buyImage} className={styles["buy-image"]} alt="Cart"/>
+                            
+                            {totalItems > 0 && (
+                                <span className={styles.cartBadge}>
+                                    {totalItems > 99 ? '99+' : totalItems}
+                                </span>
+                            )}
                         </div>
 
                         <div onClick={handleProfileClick} style={{ cursor: "pointer" }}>

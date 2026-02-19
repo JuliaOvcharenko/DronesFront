@@ -1,0 +1,356 @@
+.container {
+    max-width: 80rem; 
+    margin: 5rem auto;
+    padding: 2.5rem 1.25rem;
+    font-family: 'GT Walsheim Pro', sans-serif;
+    color: #111827;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 26rem; 
+    gap: 3rem;
+}
+
+
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+.input:focus {
+    border-color: #111827;
+}
+
+.input::placeholder {
+    color: #9CA3AF;
+}
+
+
+
+.deliveryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.deliveryCard {
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+
+.deliveryCardActive {
+    border-color: #111827;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cardHeader:hover {
+    background-color: #F9FAFB;
+}
+
+
+.hiddenRadio {
+    display: none;
+}
+
+
+.customRadio {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 50%;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0; 
+}
+
+.deliveryCardActive .customRadio {
+    border-color: #111827;
+}
+
+
+.customRadio::after {
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #111827;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deliveryCardActive .customRadio::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.deliveryTitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.npIcon {
+    height: 1.25rem;
+    width: auto;
+    object-fit: contain;
+    margin-left: auto; 
+}
+
+
+.cardBody {
+    padding: 0 1.25rem 1.25rem 3.5rem; 
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nestedLabel {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    color: #4B5563;
+}
+
+.nestedLabel:first-child {
+    margin-top: 0;
+}
+
+.backBtn {
+    background: none;
+    border: 1px solid #111827;
+    border-radius: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.2s;
+}
+
+.backBtn:hover {
+    background-color: #F3F4F6;
+}
+
+
+.rightColumn {
+    position: relative;
+}
+
+.summaryCard {
+    background: #fff;
+    border: 1px solid #E5E7EB; 
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.summaryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.productList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    max-height: 25rem;
+    overflow-y: auto;
+    padding-right: 0.5rem; 
+}
+
+.productList::-webkit-scrollbar {
+    width: 4px;
+}
+.productList::-webkit-scrollbar-thumb {
+    background-color: #E5E7EB;
+    border-radius: 4px;
+}
+
+.productItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.productImg {
+    width: 4.5rem;
+    height: 3.5rem;
+    background-color: #F9FAFB;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.375rem;
+    border: 1px solid #F3F4F6;
+    flex-shrink: 0;
+}
+
+.productInfo {
+    flex: 1;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.summaryDetails {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #E85A2D; 
+}
+
+.submitBtn {
+    width: 100%;
+    background: #111827; 
+    color: #fff;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: none;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    letter-spacing: 0.05em;
+}
+
+.submitBtn:hover {
+    background-color: #374151;
+}
+
+
+@media (max-width: 64rem) {
+    .layout {
+        grid-template-columns: 1fr; 
+    }
+
+    .summaryCard {
+        position: static; 
+        margin-top: 2rem;
+    }
+
+    .cardBody {
+        padding-left: 1.25rem; 
+    }
+}
+
+.paymentIconsRow {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto; 
+    margin-right: 1rem;
+}
+
+.paymentIconsRow img {
+    height: 1.25rem; /* ~20px */
+    width: auto;
+}
+
+
+.subPaymentList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.subPaymentItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #374151;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.subPaymentItem:hover {
+    background-color: #F3F4F6;
+}
+
+.subPaymentItem input {
+    accent-color: #111827; /* Чорний колір для стандартного радіо */
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}

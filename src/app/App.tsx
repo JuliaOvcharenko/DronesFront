@@ -1,12 +1,15 @@
 
 import { AuthProvider } from "../shared/components/AuthModal";
+import { CartProvider } from "../shared/context/CartContext";
 import { AppRoutes } from "./AppRoutes";
 
 
-export function App(){
+export function App() {
     return <div>
         <AuthProvider>
-            <AppRoutes />
+            <CartProvider>
+                <AppRoutes />
+            </CartProvider>
         </AuthProvider>
     </div>
 }

@@ -1,0 +1,401 @@
+.container {
+    width: 100%;
+}
+
+.pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    background: #fff;
+    overflow: hidden;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    gap: 1.25rem;
+}
+
+.header:hover {
+    background-color: #F9FAFB;
+}
+
+.statusDot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.statusGrey {
+    background-color: #D1D5DB;
+}
+
+.statusGreen {
+    background-color: #22C55E;
+}
+
+.headerInfoBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.headerRow,
+.headerRowMain {
+    display: grid;
+    grid-template-columns: 12.5rem 12.5rem 1fr;
+    gap: 1.25rem;
+}
+
+.headerLabel,
+.headerId {
+    font-size: 0.8125rem;
+    color: #9CA3AF;
+}
+
+.headerStatusText,
+.headerTracking,
+.headerPrice {
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #111827;
+}
+
+.miniImages {
+    display: flex;
+    gap: 0.625rem;
+}
+
+.miniImages img {
+    width: 2.5rem;
+    height: 1.875rem;
+    object-fit: contain;
+}
+
+.arrowIcon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+}
+
+
+.body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid #F3F4F6;
+}
+
+.trackingBlock {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+.trackingValue {
+    color: #111827;
+    font-weight: 500;
+}
+
+.copyBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111827;
+    font-size: 1rem;
+}
+
+
+.stepperContainer {
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 0 0.625rem;
+}
+
+.stepperLineBackground {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    height: 0.375rem;
+    background-color: #D1D5DB;
+    z-index: 1;
+    border-radius: 0.1875rem;
+}
+
+.stepsWrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.stepItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5rem;
+}
+
+.iconContainer {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.stepDot {
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.activeIconWrapper {
+    background: #fff;
+    padding: 0 0.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.busIcon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.stepLabel {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    text-align: center;
+}
+
+.stepLabelActive {
+    color: #111827;
+    font-weight: 500;
+}
+
+
+.splitLayout {
+    display: flex;
+    margin-top: 1.875rem;
+    border-top: 1px solid #F3F4F6;
+    padding-top: 1.875rem;
+}
+
+.leftColumn {
+    width: 30%;
+    padding-right: 1.875rem;
+}
+
+.rightColumn {
+    width: 70%;
+    padding-left: 1.875rem;
+    border-left: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+}
+
+.columnTitle {
+    font-size: 0.8125rem;
+    color: #9CA3AF;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.infoGroup {
+    margin-bottom: 1.5rem;
+}
+
+.infoGroup label {
+    display: block;
+    font-size: 0.8125rem;
+    color: #9CA3AF;
+    margin-bottom: 0.5rem;
+}
+
+.infoGroup p {
+    font-size: 0.875rem;
+    color: #111827;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+.productsContainer {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.productsHeaderRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    padding-bottom: 0.75rem;
+}
+
+.productRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-top: 1px solid #F3F4F6;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #111827;
+}
+
+.prodImg {
+    display: flex;
+    justify-content: center;
+}
+
+.prodImg img {
+    width: 3.125rem;
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+.prodName {
+    font-weight: 500;
+}
+
+.prodPriceBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    color: #F87171;
+    font-size: 0.75rem;
+    margin-bottom: 0.125rem;
+}
+
+.currentPrice {
+    font-weight: 600;
+}
+
+.prodQty {
+    text-align: center;
+}
+
+.prodSum {
+    font-weight: 600;
+}
+
+
+
+.financialsContainer {
+
+    margin-left: 2rem;
+    border-top: 1px solid #F3F4F6;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: fit-content;
+
+}
+
+.finRow {
+    display: grid;
+
+    grid-template-columns: 8rem 1fr;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.875rem;
+}
+
+
+.finLabel {
+    color: #9CA3AF;
+}
+
+.finValue {
+    color: #111827;
+    font-weight: 500;
+}
+
+.totalLabel {
+    color: #111827;
+    font-weight: 700;
+}
+
+.totalValue {
+    color: #111827;
+    font-weight: 700;
+}
+
+.cancelBtn {
+    margin-top: 1rem;
+    padding: 0.75rem 2.5rem;
+    background: transparent;
+    border: 1px solid #111827;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+    background-color: #F3F4F6;
+}
+
+
+@media (max-width: 64rem) {
+    .splitLayout {
+        flex-direction: column;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .rightColumn {
+        margin-top: 1.875rem;
+    }
+
+    .headerRow,
+    .headerRowMain {
+        grid-template-columns: 1fr;
+        gap: 0.3125rem;
+    }
+
+    .financialsContainer {
+        margin-left: 0;
+        width: 100%;
+    }
+}

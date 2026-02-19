@@ -5,7 +5,7 @@ import { ProductHeader } from '../../components/Product/ProductHeader';
 import { InfoBlock } from '../../components/Product/InfoBlock';
 import { ProductSuggestions } from '../../components/Product/ProductSuggestions';
 import { BASE_URL } from '../../shared/api/baseUrl';
-
+import { useCart } from '../../shared/context/CartContext'; 
 
 export const ProductPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -13,6 +13,8 @@ export const ProductPage = () => {
     const [product, setProduct] = useState<FullProduct | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    const { addToCart } = useCart();
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -24,9 +26,7 @@ export const ProductPage = () => {
 
         getProductById(id)
             .then(data => {
-                if (!data) {
-                    throw new Error();
-                }
+                if (!data) throw new Error();
                 setProduct(data);
             })
             .catch(() => {
@@ -39,35 +39,29 @@ export const ProductPage = () => {
 
     }, [id]);
 
-    if (isLoading) {
-        return (
-            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                Завантаження...
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: "red"}}>
-                {error}
-            </div>
-        );
-    }
-
-    if (!product) {
-        return (
-            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: "red" }}>
-                Товар не знайдено
-            </div>
-        );
-    }
-
     const getFullUrl = (path?: string | null) => {
         if (!path) return undefined;
         if (path.startsWith('http')) return path;
         return `${BASE_URL}/${path}`;
     };
+
+    const handleAddToCart = () => {
+        if (!product) return;
+
+        addToCart({
+            id: product.id,
+            title: product.name,
+            price: product.price,
+            oldPrice: product.discount > 0 ? product.price + product.discount : undefined,
+            description: product.description,
+            image: getFullUrl(product.mainImage?.image) || '',
+            infoBlocks: []
+        });
+    };
+
+    if (isLoading) return <div>Завантаження...</div>;
+    if (error) return <div>{error}</div>;
+    if (!product) return <div>Товар не знайдено</div>;
 
     const headerData = {
         id: product.id,
@@ -81,7 +75,11 @@ export const ProductPage = () => {
 
     return (
         <main style={{ backgroundColor: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
-            <ProductHeader product={headerData as any} />
+            
+            <ProductHeader 
+                product={headerData as any} 
+                onAddToCart={handleAddToCart}
+            />
 
             <div>
                 {product.infoBlocks?.length > 0 &&
@@ -112,5 +110,5 @@ export const ProductPage = () => {
 
             <ProductSuggestions titlePage="Схожі товари" sameAs={product.id} limit={4} />
         </main>
-    )
-}
+    );
+};

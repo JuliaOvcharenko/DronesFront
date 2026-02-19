@@ -24,6 +24,18 @@ import facebookIcon from '../assets/icons/facebookIcon.png';
 
 import passTrue from '../assets/icons/passTrue.svg'
 import passFalse from '../assets/icons/passFalse.svg'
+import novaPoshtaIcon from '../assets/icons/novaPoshtaIcon.webp'
+import visa from '../assets/icons/Visa.svg'
+import mastercard from '../assets/icons/Mastercard.svg'
+import googlePay from '../assets/icons/GooglePay.svg'
+import applePay from '../assets/icons/ApplePay.svg'
+
+import upIcon from '../assets/icons/upIcon.svg'
+import downIcon from '../assets/icons/downIcon.svg'
+import busIcon from '../assets/icons/busIcon.svg'
+
+import penIcon from '../assets/icons/penIcon.svg'
+import trashIcon from '../assets/icons/trashIcon.svg'
 
 
 
@@ -52,5 +64,15 @@ export const IMAGES = {
     instagramIcon,
     facebookIcon,
     passFalse,
-    passTrue
+    passTrue,
+    novaPoshtaIcon,
+    visa,
+    googlePay,
+    applePay,
+    mastercard,
+    upIcon,
+    downIcon,
+    busIcon,
+    penIcon,
+    trashIcon
 }
