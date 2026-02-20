@@ -157,7 +157,11 @@ export const OrdersPage = () => {
     }
 
     if (orders.length === 0) {
-        return <div className={styles.container}><h2 className={styles.pageTitle}>У вас ще немає замовлень</h2></div>;
+        return <div className={styles.container}>
+            <h2 className={styles.pageTitle}>У вас ще немає замовлень</h2>
+            <h5>Будь ласка, додайте їх</h5>
+        </div>;
+        
     }
 
     return (

@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import styles from './page.module.css'; 
 import { useAuth } from '../../../shared/components/AuthModal';
 
+
 export const AccountLayout = () => {
     const navigate = useNavigate();
     const location = useLocation(); 
@@ -16,11 +17,8 @@ export const AccountLayout = () => {
 
     return (
         <div className={styles.mainContainer}>
-            {/* ЛІВА ЧАСТИНА (Меню) - Тепер вона тут */}
             <div className={styles.leftContainer}>
                 <h1 className={styles.accountText}>ОСОБИСТИЙ КАБІНЕТ</h1>
-
-                {/* Навігація */}
                 <Link
                     to="/account/profile"
                     className={`${styles.textLeft} ${isActive('/account/profile')}`}
@@ -43,8 +41,6 @@ export const AccountLayout = () => {
                     ВИЙТИ
                 </button>
             </div>
-
-            {/* ПРАВА ЧАСТИНА (Змінний контент) */}
             <Outlet />
         </div>
     );

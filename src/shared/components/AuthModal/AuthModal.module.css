@@ -144,7 +144,7 @@
     font-weight: 700;
     font-size: 0.75rem; /* 12px */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 10%;
     cursor: pointer;
     transition: all 0.3s ease;
 }

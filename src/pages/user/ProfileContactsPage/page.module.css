@@ -23,7 +23,7 @@
 .accountText{
     color: #0C122A;
     font-size: clamp(1rem, 1.5rem, 1.8rem);
-    letter-spacing: 100%;
+    letter-spacing: 3%;
     font-weight: 400;
 }
 
@@ -42,6 +42,7 @@
     font-weight: 500;
     color: #9EA0AA;
     cursor: pointer;
+    text-decoration: none;
 
 }
 .contactsDataLink{
@@ -78,13 +79,18 @@ hr{
     border: 0.1rem #9EA0AA solid;
     background: none;
     height: clamp(2rem, 2.5rem, 3rem);
-    width: clamp(8.5rem, 8.5rem, 9rem);
+    width: clamp(9rem, 9.5rem, 10rem);
     border-radius: 20px;
     font-size: clamp(0.6rem, 0.8rem, 1rem);
     color: #9EA0AA;
     font-weight: 500;
-    letter-spacing: 100%;
+    letter-spacing: 9%;
     display: flex;
     align-items: center;
-    justify-content:center
+    justify-content:center;
+    padding: clamp(0.7rem, 0.8rem, 0.9rem) clamp(0.3rem, 0.5rem, 0.7rem)
+}
+
+.saveDataButton:hover{
+    background-color: #f4eff7;
 }

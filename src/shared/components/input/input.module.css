@@ -36,7 +36,6 @@ input:focus {
 input::placeholder {
     font-size: clamp(0.8em, 1em, 1.2em);
     color: #b1b3be;
-    letter-spacing: 80%;
     line-height: clamp(2.3rem, 2.8vw, 3.3rem);
     font-weight: 400
 }
