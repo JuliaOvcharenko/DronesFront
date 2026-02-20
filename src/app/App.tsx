@@ -1,5 +1,4 @@
-
-import { AuthProvider } from "../shared/components/AuthModal";
+import { AuthProvider } from "../shared/context/AuthContext";
 import { CartProvider } from "../shared/context/CartContext";
 import { AppRoutes } from "./AppRoutes";
 

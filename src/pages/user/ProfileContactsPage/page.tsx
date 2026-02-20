@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './page.module.css';
 import { Input } from '../../../shared/components/input';
-import { useAuth } from '../../../shared/components/AuthModal';
+import { useAuth } from '../../../shared/context/AuthContext';
+
+
 
 export function ProfileContactsPage() {
     const navigate = useNavigate()

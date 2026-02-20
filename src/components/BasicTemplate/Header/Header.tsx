@@ -4,8 +4,9 @@ import { IMAGES } from "../../../shared/images"
 import { HeaderProps } from "../../../shared/types"
 import styles from "./header.module.css"
 import { AuthModal } from "../../../shared/components/AuthModal/AuthModal"
-import { useAuth } from "../../../shared/components/AuthModal"
 import { useCart } from '../../../shared/context/CartContext'
+import { useAuth } from "../../../shared/context/AuthContext"
+
 
 export function Header(props: HeaderProps) {
     const { headerVariant } = props

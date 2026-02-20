@@ -10,6 +10,7 @@ import { ProfileContactsPage } from "../pages/user/ProfileContactsPage";
 import { CheckoutPage } from "../pages/checkout";
 import { OrdersPage } from "../pages/user/orders";
 import { AccountLayout } from "../pages/user/ProfileContactsPage/AccountLayout";
+import { RecoverPasswordPage } from "../pages/user/recoverPassword";
 
 
 export function AppRoutes() {
@@ -70,16 +71,15 @@ export function AppRoutes() {
                         { label: "КОШИК", path: "/cart" },
                         { label: "КАБІНЕТ", path: "/account" }]} />}>
                     <Route path="/account" element={<AccountLayout />}>
-                        {/* При переході просто на /account редіректимо на профіь */}
                         <Route index element={<Navigate to="profile" replace />} />
 
-                        {/* /account/profile */}
                         <Route path="profile" element={<ProfileContactsPage />} />
 
-                        {/* /account/orders */}
                         <Route path="orders" element={<OrdersPage />} />
                     </Route>
                 </Route>
+
+                <Route path="/recover-password" element={<RecoverPasswordPage />} />
 
             </Routes>
         </BrowserRouter>

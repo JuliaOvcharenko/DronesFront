@@ -1,6 +1,6 @@
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import styles from './page.module.css'; 
-import { useAuth } from '../../../shared/components/AuthModal';
+import { useAuth } from '../../../shared/context/AuthContext';
 
 
 export const AccountLayout = () => {
