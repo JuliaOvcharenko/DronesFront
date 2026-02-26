@@ -46,7 +46,7 @@ export function ProductMiniCard({ product }: ProductMiniCardProps) {
                         console.log('Add to cart:', product.id);
                     }}
                 >
-                    <img src={IMAGES.cartImage}/>
+                    <img src={IMAGES.cartImage} alt='add to cart'/>
                 </button>
             </div>
         </Link>

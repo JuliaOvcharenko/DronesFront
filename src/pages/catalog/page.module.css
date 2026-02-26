@@ -1,37 +1,47 @@
-.catalog-container{
+.catalog-container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
     max-width: 1440px;   
     margin: 0 auto; 
-    padding: 
-        clamp(6vw, 9vw, 9.5vw)  
-        clamp(1vw, 1.5vw, 1.7vw) 
-        clamp(4vw, 10vw, 10vw); 
+    padding: clamp(6vw, 9vw, 9.5vw) clamp(1vw, 1.5vw, 1.7vw) clamp(4vw, 10vw, 10vw); 
     min-height: 100vh;
+    box-sizing: border-box; 
+    overflow-x: hidden; 
 }
 
-.catalog-p{
+.catalog-p {
     font-weight: bold;
-    font-size: calc(1.3vw + 2.6vh);
+    font-size: clamp(2rem, 4vw, 3.5rem); 
     color: #CDD5DD;
-    letter-spacing: 3%;
+    letter-spacing: 0.03em;
     text-align: center;
+    margin: 0;
 }
 
-.filter-container{
+.filter-container {
     margin-top: 2rem;
-    height: 60px;
-    width: fit-content;
+    height: auto;
+    width: 100%;
     display: flex;
-    gap: clamp(1rem, 1.5rem, 2rem)
+    gap: clamp(1rem, 1.5rem, 2rem);
+    padding-bottom: 0.5rem;
     
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.filter-button{
+.filter-container::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-button {
     height: clamp(2.5rem, 4rem, 3.5rem);
     width: clamp(2.5rem, 4rem, 3.5rem);
+    flex-shrink: 0; 
     border-radius: 50%;
     border: none;
     display: flex;
@@ -39,7 +49,7 @@
     align-items: center;
     background-color: #F4F4F4;
     color: #0C122A;
-    font-size: calc(0.5vw + 0.8vh);
+    font-size: clamp(0.875rem, 1vw, 1rem); 
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -47,38 +57,28 @@
 
 .filter-button:hover {
     background-color: #E7E7EA;
-    transform: translateY(-2px);
     border-color: #d1d1d1;
 }
 
-
 .filter-icon {
-    width: 100%; 
+    width: 60%; 
+    height: auto;
+    object-fit: contain;
 }
-
 
 .filter-button.active {
     background-color: #E0E0E0; 
-    border-color: #0C122A;
-    transform: translateY(-1px);
-}
-.filter-button:active {
-    transform: translateY(0);
+    border: 2px solid #0C122A;
 }
 
 .filter-button:focus {
     background-color: #E7E7EA;
 }
 
-.products-container{
+.products-container {
     display: grid;
     width: 100%;
-
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(280px, 1fr)
-    );
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: clamp(1.5rem, 2vw, 2.5rem);
     min-height: 60vh;
     padding-top: 2%;
@@ -86,32 +86,35 @@
     align-content: start;
 }
 
-.pagination-container{
+.pagination-container {
     display: flex;
     justify-content: flex-end;
     gap: clamp(1.5rem, 2rem, 2.5rem);
     padding-top: clamp(3.5rem, 4rem, 4.5rem);
 }
 
-.page-button{
+.page-button, .active-page-button {
     height: clamp(1.5rem, 2rem, 2.5rem);
     width: clamp(1.5rem, 2rem, 2.5rem);
     border-radius: 50%;
     border: none;
     background-color: #F4F4F4;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.active-page-button{
-    height: clamp(1.5rem, 2rem, 2.5rem);
-    width: clamp(1.5rem, 2rem, 2.5rem);
-    border-radius: 50%;
-    border: none;
-    background-color: #F4F4F4;
+.active-page-button {
+    background-color: #0C122A;
+    color: #fff;
 }
 
-.p-not-found{
+.p-not-found {
     color: rgb(187, 5, 5);
-    font-size: calc(0.5vw + 0.8vh);
+    font-size: clamp(1rem, 1.5vw, 1.25rem); 
+    font-weight: 600;
 }
 
 .found-contain {
@@ -124,13 +127,14 @@
     height: 100%;
     min-height: 18rem;
 }
+
 .page-button:hover:not(:disabled) {
     background-color: #E0E0E0;
 }
 
-.p-down{
-    color: #0C122A;
-    font-size: calc(0.5vw + 0.8vh);
+.p-down {
+    font-size: clamp(1rem, 1.2vw, 1.125rem); 
+    color: #666;
 }
 
 @keyframes fadeInUp {
@@ -144,15 +148,29 @@
     }
 }
 
-.fade-enter {
+.fade-enter, .fade-in {
     animation: fadeInUp 0.5s ease-out forwards;
 }
 
-.p-down {
-    font-size: 18px;
-    color: #666;
-}
 
-.fade-in {
-    animation: fadeInUp 0.5s ease-out forwards;
+@media (max-width: 1000px) {
+    .catalog-container {
+        padding-top: clamp(6rem, 15vh, 8rem); 
+    }
+
+    .catalog-p {
+        font-size: clamp(2.5rem, 10vw, 4rem); 
+    }
+    
+    .products-container {
+        margin-top: clamp(2rem, 4vh, 4rem);
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        justify-items: center;
+        gap: 3rem;
+    }
+    
+    .pagination-container {
+        justify-content: center; 
+    }
+
 }

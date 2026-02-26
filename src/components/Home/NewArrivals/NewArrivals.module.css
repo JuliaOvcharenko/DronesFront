@@ -12,13 +12,13 @@
 }
 
 .section-title {
-    color: #E2E8F0;
+    color: #CDD5DD;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     margin: 0;
     margin-bottom: 2rem;
-    font-size: calc(1.59vw + 2.82vh);
+    font-size: clamp(3rem, 3vw, 3.5rem);
 }
 
 .grid {
@@ -28,4 +28,11 @@
     gap: clamp(1.5rem, 2vw, 3rem);
     width: 100%;
     max-width: 1440px;
+}
+
+@media (max-width: 1000px) {
+    .grid{
+        margin-top: clamp(2rem, 15vh, 3.5rem);
+        gap: clamp(1.5rem, 15vw, 4rem);
+    }
 }

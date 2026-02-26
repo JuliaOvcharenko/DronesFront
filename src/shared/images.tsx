@@ -37,6 +37,7 @@ import busIcon from '../assets/icons/busIcon.svg'
 import penIcon from '../assets/icons/penIcon.svg'
 import trashIcon from '../assets/icons/trashIcon.svg'
 
+import strelkaWhite from '../assets/icons/strelkaWhite.png'
 
 
 export const IMAGES = {
@@ -74,5 +75,6 @@ export const IMAGES = {
     downIcon,
     busIcon,
     penIcon,
-    trashIcon
+    trashIcon,
+    strelkaWhite
 }
