@@ -239,7 +239,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 								</button>
 							) : (
 								<div className={styles.switchLink}>
-									<span onClick={() => switchView('login')} style={{ cursor: 'pointer' }}>
+									<span onClick={() => switchView('login')} className={styles.switchLinkText}>
 										Вже є акаунт? Увійти
 									</span>
 								</div>
@@ -247,7 +247,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 
 							<div className={styles.buttonsRow}>
 								<button type="button" className={`${styles.btn} ${styles.btnCancel}`} onClick={onClose}>
-									СКАСУВАТИ
+									<p >СКАСУВАТИ</p>
 								</button>
 								<button type="submit" className={`${styles.btn} ${styles.btnSubmit}`} disabled={isLoading}>
 									{isLoading
@@ -293,7 +293,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 								<input
 									className={styles.input}
 									type="email"
-									placeholder="Введіть вашу пошту"
+									placeholder="Введіть email"
 									value={forgotEmail}
 									onChange={(e) => setForgotEmail(e.target.value)}
 								/>

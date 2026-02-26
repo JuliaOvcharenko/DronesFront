@@ -31,8 +31,15 @@
 }
 
 @media (max-width: 1000px) {
+    .section{
+        margin-top: clamp(2rem, 15vh, 3.2rem);
+    }
     .grid{
         margin-top: clamp(2rem, 15vh, 3.5rem);
         gap: clamp(1.5rem, 15vw, 4rem);
+    }
+    .section-title{
+        font-size: clamp(2rem, 15vw, 2.5rem);
+        margin-bottom: clamp(-3rem, 15vh, -5rem);
     }
 }

@@ -7,7 +7,6 @@ import { IMAGES } from '../../shared/images';
 import { useCart } from '../../shared/context/CartContext';
 import { createOrder } from '../../shared/api/order';
 
-// Типи
 type DeliveryMethod = 'postomat' | 'department' | 'courier';
 type PaymentMainMethod = 'on_delivery' | 'pay_now';
 type OnlinePaymentMethod = 'card' | 'privat' | 'apple' | 'google';
@@ -49,6 +48,9 @@ const RadioCard = ({
 export const CheckoutPage = () => {
     const navigate = useNavigate();
     const { items, totalAmount, clearCart } = useCart();
+
+    // Стейт помилки
+    const [error, setError] = useState<string | null>(null);
 
     // Стейт Контактів
     const [lastName, setLastName] = useState('');
@@ -129,31 +131,37 @@ export const CheckoutPage = () => {
         }
     };
 
+    const showError = (msg: string) => {
+        setError(msg);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     // ВАЛІДАЦІЯ ТА ВІДПРАВКА
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null); 
 
         const nameRegex = /^[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]{2,}$/;
         if (!nameRegex.test(name.trim()) || !nameRegex.test(lastName.trim()) || !nameRegex.test(patronymic.trim())) {
-            alert("ПІБ має містити лише літери та бути не коротшим за 2 символи");
+            showError("ПІБ має містити лише літери та бути не коротшим за 2 символи");
             return;
         }
 
         const phoneRegex = /^(?:\+380|380|0)\d{9}$/;
         const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
         if (!phoneRegex.test(cleanPhone)) {
-            alert("Введіть коректний номер телефону наприклад +380991234567 або 0991234567");
+            showError("Введіть коректний номер телефону наприклад +380991234567 або 0991234567");
             return;
         }
 
         if (deliveryType === 'courier') {
             if (!courierStreet.trim() || !courierHouse.trim()) {
-                alert("Вкажіть вулицю та номер будинку для кур'єра");
+                showError("Вкажіть вулицю та номер будинку для кур'єра");
                 return;
             }
         } else {
             if (!selectedCityRef || !selectedWarehouse) {
-                alert("Оберіть місто та відділення або поштомат");
+                showError("Оберіть місто та відділення або поштомат");
                 return;
             }
         }
@@ -202,16 +210,14 @@ export const CheckoutPage = () => {
         try {
             console.log("Sending:", orderPayload);
             await createOrder(orderPayload);
-            alert("Замовлення успішно оформлено!");
             clearCart();
             navigate('/account/orders');
         } catch (error: any) {
             console.error(error);
-            // Виводимо текст помилки
             if (error.message.includes('<')) {
-                alert("Помилка сервера. Перевірте адресу API (BASE_URL).");
+                showError("Помилка сервера. Перевірте адресу API (BASE_URL).");
             } else {
-                alert(`Помилка: ${error.message}`);
+                showError(`Помилка: ${error.message}`);
             }
         }
     };
@@ -250,6 +256,22 @@ export const CheckoutPage = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>ОФОРМИТИ ЗАМОВЛЕННЯ</h1>
+
+            {/* Блок з помилкою */}
+            {error && (
+                <div style={{
+                    backgroundColor: '#fee2e2',
+                    color: '#b91c1c',
+                    padding: '1rem',
+                    borderRadius: '0.5rem',
+                    marginBottom: '2rem',
+                    fontWeight: 500,
+                    border: '1px solid #f87171',
+                    textAlign: 'center'
+                }}>
+                    {error}
+                </div>
+            )}
 
             <form className={styles.layout}>
                 <datalist id="cities-list">

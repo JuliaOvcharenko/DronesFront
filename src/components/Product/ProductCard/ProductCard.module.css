@@ -117,6 +117,10 @@
     gap: 0.5rem;
     transition: all 0.3s ease;
 }
+.buy-btn-text{
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
 
 .buy-btn:hover {
     background: #ffffff6b;
@@ -131,7 +135,7 @@
         max-width: 100%;
         aspect-ratio: 3 / 4; 
         min-height: 25rem; 
-        margin-top: 8rem; 
+        margin-top: 8rem;
     }
 
     .drone-wrapper {
@@ -146,19 +150,19 @@
 
     .description {
         font-size: 1rem; 
-        margin-bottom: 5rem;
-        font-weight: 500;
+        margin-bottom: clamp(2.5rem, 10vw,4.5rem);
+        font-weight: 400;
         opacity: 0.9;
     }
 
     .price {
-        font-size: 1.1rem;
+        font-size: clamp(0.7rem,15vw,0.9rem);
         font-weight: 400;
     }
 
     .buy-btn {
         font-size: 0.875rem;
-        padding: 0.8rem 1.5rem;
+        padding: clamp(0.7rem, 15vw, 0.75rem) clamp(0.4rem, 15vw, 1.2rem);
         font-weight: 600;
     }
 }

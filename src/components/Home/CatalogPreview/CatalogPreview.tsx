@@ -88,7 +88,7 @@ export function CatalogPreview({ title = "КАТАЛОГ" }: CatalogPreviewProps
                 className={styles["view-all-btn"]}
                 onClick={() => navigate('/catalog')}
             >
-                ДИВИТИСЬ ВСІ
+                <p className={styles["view-all-btn-text"]}>Дивитися ВСІ</p>
                 <span className={styles["arrow"]}>→</span>
             </button>
         </section>

@@ -37,12 +37,12 @@ export function ProductCard({ title, description, price, bgImage, droneImage, ov
                 <p className={styles["description"]}>{description}</p>
 
                 <div className={styles["footer"]}>
-                    <span className={styles["price"]}>from ${price}</span>
+                    <span className={styles["price"]}>from to ${price}</span>
                     <button
                         className={styles["buy-btn"]}
                         onClick={() => navigate('/catalog')}
                     >
-                        КУПИТИ
+                        <p className={styles["buy-btn-text"]}>КУПИТИ</p>
                         <span className={styles["arrow"]}>→</span>
                     </button>
                 </div>
