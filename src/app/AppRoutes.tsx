@@ -11,6 +11,7 @@ import { CheckoutPage } from "../pages/checkout";
 import { OrdersPage } from "../pages/user/orders";
 import { AccountLayout } from "../pages/user/ProfileContactsPage/AccountLayout";
 import { RecoverPasswordPage } from "../pages/user/recoverPassword";
+import { AddressPage } from "../pages/user/addresses";
 
 
 export function AppRoutes() {
@@ -76,10 +77,12 @@ export function AppRoutes() {
                         <Route path="profile" element={<ProfileContactsPage />} />
 
                         <Route path="orders" element={<OrdersPage />} />
+                        <Route path="address" element={<AddressPage/>}/>
                     </Route>
                 </Route>
 
-                <Route path="/recover-password" element={<RecoverPasswordPage />} />
+                <Route path="/recover-password" element={<RecoverPasswordPage/>}/>
+              
 
             </Routes>
         </BrowserRouter>
