@@ -60,8 +60,9 @@ body.grey{
 }
 
 body {
-    padding-top: 3.5rem;
+    padding-top: clamp(7.5rem, 8rem, 8.5rem)
 }
+
 
 @media (max-width: 768px) {
     body {

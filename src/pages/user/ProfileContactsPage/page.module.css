@@ -5,7 +5,7 @@
     max-width: 2440px;   
     margin: 0 auto; 
     padding: 
-        clamp(9vw, 10vw, 10.5vw)  
+        clamp(1vw, 1.5vw, 1.7vw) 
         clamp(2vw, 2.5vw, 2.7vw) 
         clamp(4vw, 10vw, 10vw); 
     min-height: 100vh;
