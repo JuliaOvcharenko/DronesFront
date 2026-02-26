@@ -1,4 +1,4 @@
-import dronesLogo from '../assets/icons/dronesLogo.png'
+import dronesLogo from '../assets/icons/dronesLogo.svg'
 import buyImage from '../assets/icons/buyImage.png'
 import headerProfile from '../assets/icons/headerProfile.png'
 import dronesFooterLogo from '../assets/icons/Subtract.png';
@@ -36,6 +36,9 @@ import busIcon from '../assets/icons/busIcon.svg'
 
 import penIcon from '../assets/icons/penIcon.svg'
 import trashIcon from '../assets/icons/trashIcon.svg'
+import burgerIcon from '../assets/icons/burgerIcon.png'
+
+import phoneFooter from '../assets/images/phoneFooter.png';
 
 
 
@@ -74,5 +77,7 @@ export const IMAGES = {
     downIcon,
     busIcon,
     penIcon,
-    trashIcon
+    trashIcon,
+    burgerIcon,
+    phoneFooter
 }

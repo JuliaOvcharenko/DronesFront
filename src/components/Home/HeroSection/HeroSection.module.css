@@ -7,11 +7,12 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    
 }
 
 .content-wrapper {
     position: relative;
-    margin-top: clamp(1rem, 8vh, 6rem);
+    margin-top: 0;
     margin-bottom: clamp(-1rem, 5vh, -4rem);
     width: 100%;
     height: 100%;
@@ -111,8 +112,38 @@
     width: 120%;
     height: clamp(18rem, 35vh, 50rem);
     background-color: #fff;
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
+    border-top-left-radius: 50% 30%; 
+    border-top-right-radius: 50% 30%; 
     z-index: 2;
-    margin-bottom: clamp;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 4rem;
+        min-height: 100vh; 
+    }
+    
+    .bottom-curve {
+        border-top-left-radius: 50% 20%;
+        border-top-right-radius: 50% 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        overflow: hidden;
+        max-width: 100vw;
+    }
+    .hero-section {
+        margin-top: -4.5rem; 
+    }
 }

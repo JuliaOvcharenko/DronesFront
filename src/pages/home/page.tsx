@@ -6,7 +6,7 @@ import styles from './page.module.css';
 
 
 export function HomePage() {
-  document.body.className = "white"
+  document.body.className = "grey"
   return (
     <div className={styles["home-page"]}>
       <HeroSection />

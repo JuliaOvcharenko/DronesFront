@@ -34,10 +34,37 @@
 }
 
 
+body.white{
+    background-color: #FFFFFF80
+}
+
 body.grey{
     background-color: #CDD5DD
 }
 
-body.white{
-    background-color: #FFFFFF80
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    #root {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+}
+
+body {
+    padding-top: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: clamp(4rem, 4.5rem, 5rem); 
+    }
 }

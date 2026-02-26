@@ -2,35 +2,26 @@ import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../../shared/images";
 import { FooterProps } from "../../../shared/types";
 import styles from "./footer.module.css";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 
 export function Footer(props: FooterProps) {
-    const { footerVariant, links, bigNumbers, numberDescribtion } = props;
+    const { links, bigNumbers, numberDescribtion } = props;
     const navigate = useNavigate();
-    const hasData = links?.length || bigNumbers?.length || numberDescribtion?.length;
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
-            document.body.className = 'white'
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-        }, [])
+        document.body.className = 'white';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    if (footerVariant === "straight" || !hasData) {
-        return (
-            <footer className={styles.straight}>
-                <img src={IMAGES.dronesFooterLogo} className={styles["watermark-img"]} alt="Drones Footer Logo" />
-                <div className={styles["footer-line"]} />
-                <p className={styles["copyright-text"]}>
-                    © 2025 Drones Всі права захищені.
-                </p>
-            </footer>
-        );
-    }
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-   return (
+    if (!links?.length && !bigNumbers?.length) return null;
+
+    return (
         <footer className={styles.rounded}>
-            <img src={IMAGES.baseFooter} className={styles["footer-back"]} alt="footer-bg" />
-            
             <div className={styles.container}>
                 {bigNumbers && numberDescribtion && (
                     <div className={styles["desc-footer"]}>
@@ -43,19 +34,34 @@ export function Footer(props: FooterProps) {
                     </div>
                 )}
 
-                {links && (
-                    <div className={styles.links}>
-                        {links.map((link) => (
-                            <p key={link.path} onClick={() => navigate(link.path)}>
-                                {link.label}
-                            </p>
-                        ))}
+                <div className={styles.grayArea}>
+                    <img 
+                        src={isMobile ? IMAGES.phoneFooter : IMAGES.baseFooter} 
+                        className={styles["footer-back"]} 
+                        alt="" />
+
+                    <div className={styles.overlayContent}>
+                        {links && (
+                            <div className={styles.links}>
+                                {links.map((link) => (
+                                    <p key={link.path} onClick={() => navigate(link.path)}>
+                                        {link.label}
+                                    </p>
+                                ))}
+                            </div>
+                        )}
+
+                        {!isMobile && (
+                            <div className={styles.copyright}>
+                                <div className={styles["footer-line"]} />
+                                <p className={styles["copyright-text"]}>
+                                    © 2025 Drones Всі права застережені.
+                                </p>
+                            </div>
+                        )}
                     </div>
-                )}
+                </div>
             </div>
         </footer>
     );
 }
-
-
-
