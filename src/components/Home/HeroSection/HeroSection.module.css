@@ -135,29 +135,28 @@
     }
 
     .main-title {
-        font-size: clamp(2rem, 15vw, 3rem);
+        font-size: clamp(1.8rem, 15vw, 2.3rem);
         line-height: 1;
-        margin-top: 0;
+        margin-top: clamp(1rem, 15vw, 1.5rem);
     }
     .sub-title {
-        font-size: clamp(2rem, 15vw, 3rem);
+        font-size: clamp(1.8rem, 15vw, 2.3rem);
         line-height: 1;
-        margin-top: 2rem;
+        margin-top: clamp(0.5rem, 15vw, 1.5rem);
     }
 
     .drone-container {
-        margin-top: -2rem;
-        margin-bottom: auto;
+        margin-top: clamp(-1.7rem, 15vw, -3rem);
         z-index: 3;
+        margin-bottom: clamp(1rem, 15vw, 1.5rem)   ;
     }
 
     .drone-img {
-        width: 130vw;
-        max-width: 60rem;
+        width: 140vw;
     }
 
     .bottom-curve {
-        height: 39vh;
+        height: 43.5vh;
         width: 250%;
         bottom: 0;
     }
@@ -179,14 +178,16 @@
 
 
     .description {
-        font-size: 1rem;
+        font-size: clamp(0.5rem, 15vw, 1rem);
         font-weight: 400;
         max-width: 80vw;
+        line-height: normal;
+        margin-bottom: clamp(0.2rem, 15vw, 0.4rem);
     }
 
     .catalog-btn {
-        font-size: 1rem;
-        padding: clamp(1rem, 1.5rem, 2rem) clamp(3rem, 3.5rem, 4rem);
+        font-size: clamp(0.8rem, 4vw, 1.2rem);
+        padding: clamp(1rem, 15vw, 1.2rem) clamp(1.5rem, 15vw, 2.6rem);
         border-radius: clamp(2rem, 3rem, 4rem);
         font-weight: 500;
         display: flex;

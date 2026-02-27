@@ -6,7 +6,7 @@
     padding: clamp(3rem, 5vh, 6rem) 20px;
     background-color: #fff;
     margin-top: clamp(5rem, 8vh, 9rem);
-    margin-bottom: clamp(3rem, 10vh, 10rem);
+    margin-top: clamp(5rem, 12vh, 10rem);
     font-family: 'GT Walsheim Pro', sans-serif;
     box-sizing: border-box;
 }
@@ -130,8 +130,8 @@
 
 @media (max-width: 600px) {
     .title {
-        font-size: clamp(2rem, 15vw, 3rem);
-        margin-bottom: 4rem;
+        font-size: clamp(2rem, 15vw, 2.5rem);
+        margin-bottom: clamp(1rem, 3vh, 4rem);
     }
     .section{
         margin-top: 0;
@@ -150,6 +150,7 @@
         margin: 0 auto 1.5rem auto; 
         aspect-ratio: auto;
         min-height: 15rem; 
+        margin-bottom: 0;
     }
     
     .img {
@@ -160,19 +161,25 @@
 
     .card-title {
         font-size: 1.5rem; 
-        margin-bottom: 0.75rem;
+        margin-bottom: clamp(1rem, 6vh, 3rem);
         font-weight: 500;
     }
 
     .price-block {
-        font-size: 1.1rem; 
+        font-size: 1rem; 
         font-weight: 500;
+        margin-bottom: clamp(-3.5rem, 6vh, -4rem);
     }
 
     .view-all-btn {
         font-size: 0.875rem;
-        padding: 1rem 2.5rem;
+        padding: clamp(1rem, 3vh, 2rem) clamp(3rem, 5vw, 5rem);
         align-items: center;
         justify-content: center;
+        
+    }
+    .view-all-btn-text{
+        font-weight: 500;
+        letter-spacing: 0.1em;
     }
 }
