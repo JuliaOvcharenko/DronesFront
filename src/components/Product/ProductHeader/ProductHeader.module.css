@@ -253,9 +253,13 @@
 }
 
 @media (max-width: 68rem) {
+    .section {
+        padding-top: 4rem !important;
+    }
+
     .visualContainer {
         flex-direction: column;
-        margin-top: 0; 
+        margin-top: 0;
     }
 
     .buyCard {
@@ -267,5 +271,10 @@
         width: 90%;
         max-width: 25rem;
         animation: fadeInUp 1s ease-out 0.5s backwards;
+    }
+
+    .bottomCurve {
+        width: 250%;
+        height: 43.5vh;
     }
 }

@@ -68,7 +68,7 @@
 .info-block {
     position: absolute;
     right: 13%;
-    bottom: 5%; 
+    bottom: 5%;
     z-index: 4;
     display: flex;
     flex-direction: column;
@@ -102,6 +102,10 @@
     opacity: 0.9;
 }
 
+.btn-arrow {
+    display: none;
+}
+
 .bottom-curve {
     position: absolute;
     bottom: 0;
@@ -113,7 +117,6 @@
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
     z-index: 2;
-    margin-bottom: clamp;
 }
 
 
@@ -121,10 +124,13 @@
     .hero-section {
         min-height: 100svh;
         padding-bottom: 5vh;
+        margin-top: -4.5rem;
+        padding-top: 4.5rem;
+        box-sizing: border-box;
     }
 
     .content-wrapper {
-        margin-top: 6rem;
+        margin-top: 2rem;
         justify-content: flex-start;
     }
 
@@ -140,6 +146,7 @@
         line-height: 1;
         margin-top: clamp(1rem, 15vw, 1.5rem);
     }
+
     .sub-title {
         font-size: clamp(1.8rem, 15vw, 2.3rem);
         line-height: 1;
@@ -149,7 +156,7 @@
     .drone-container {
         margin-top: clamp(-1.7rem, 15vw, -3rem);
         z-index: 3;
-        margin-bottom: clamp(1rem, 15vw, 1.5rem)   ;
+        margin-bottom: clamp(1rem, 15vw, 1.5rem);
     }
 
     .drone-img {
@@ -177,7 +184,6 @@
         margin-top: 5%;
     }
 
-
     .description {
         font-size: clamp(0.5rem, 15vw, 1rem);
         font-weight: 400;
@@ -196,6 +202,7 @@
         justify-content: center;
         gap: 1rem;
     }
+
     .btn-arrow {
         display: block;
         width: 1.5rem;

@@ -33,10 +33,15 @@ export function HeroSection() {
                         Обирай найкраще для найважливішого.
                     </p>
 
-                    <button
+                     <button
                         className={styles["catalog-btn"]}
                         onClick={() => navigate('/catalog')}>
                         ДО КАТАЛОГУ
+                        <img 
+                            src={IMAGES.strelkaWhite} 
+                            alt="Arrow right" 
+                            className={styles["btn-arrow"]} 
+                        />
                     </button>
                 </div>
 
