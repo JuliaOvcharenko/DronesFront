@@ -33,7 +33,9 @@ export const AccountLayout = () => {
                     МОЇ ЗАМОВЛЕННЯ
                 </Link>
 
-                <p className={styles.textLeft}>АДРЕСА ДОСТАВКИ</p>
+                <Link to="/account/address" className={`${styles.textLeft} ${isActive('/account/address')}`}>
+	                АДРЕСА ДОСТАВКИ
+                </Link>
 
                 <hr />
 

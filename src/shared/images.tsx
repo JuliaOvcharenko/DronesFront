@@ -40,6 +40,7 @@ import burgerIcon from '../assets/icons/burgerIcon.png'
 
 import phoneFooter from '../assets/images/phoneFooter.png';
 
+import strelkaWhite from '../assets/icons/strelkaWhite.png'
 
 
 export const IMAGES = {
@@ -79,5 +80,6 @@ export const IMAGES = {
     penIcon,
     trashIcon,
     burgerIcon,
-    phoneFooter
+    phoneFooter,
+    strelkaWhite
 }

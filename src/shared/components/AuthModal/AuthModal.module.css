@@ -5,8 +5,8 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(30, 35, 50, 0.7);
-    -webkit-backdrop-filter: blur(0.5rem); /* 8px */
-    backdrop-filter: blur(0.5rem); 
+    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.5rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,23 +17,28 @@
 
 .modal {
     background: #ffffff;
-    width: 31.25rem; /* 500px */
-    max-width: 90%;
-    padding: 2.5rem; /* 40px */
-    border-radius: 1.25rem; /* 20px */
-    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2); /* 20px 40px */
+    width: clamp(15rem, 90vw, 27rem);
+    padding: clamp(0.5rem, 2vw, 9rem);
+    border-radius: 0.8rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
     position: relative;
     transform: scale(0.95);
     animation: scaleUp 0.3s forwards;
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    text-decoration: none;
+	color: #B62D11;
 }
 
 .closeBtn {
     position: absolute;
-    top: 1.25rem; /* 20px */
-    right: 1.25rem; /* 20px */
+    top: 1rem;
+    right: 1rem;
     background: transparent;
     border: none;
-    font-size: 1.5rem; /* 24px */
+    font-size: 1rem;
     cursor: pointer;
     color: #111827;
     transition: transform 0.2s ease;
@@ -44,31 +49,31 @@
 }
 
 .header {
-    margin-bottom: 1.875rem; /* 30px */
-    font-size: 1.25rem; /* 20px */
+    margin-bottom: clamp(1.2rem, 3vw, 1.875rem);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 500;
-    color: #9CA3AF; 
+    color: #9CA3AF;
 }
 
 .activeTitle {
-    color: #111827; 
+    color: #111827;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; /* 20px */
+    gap: clamp(0.8rem, 2vw, 1.25rem);
 }
 
 .inputGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* 8px */
+    gap: 0.5rem;
 }
 
 .label {
-    font-size: 0.875rem; /* 14px */
-    font-weight: 600;
+    font-size: 0.875rem;
+    font-weight: 400;
     color: #111827;
 }
 
@@ -80,22 +85,22 @@
 
 .input {
     width: 100%;
-    padding: 0.875rem 1rem; /* 14px 16px */
+    padding: clamp(0.7rem, 1.5vw, 0.875rem) 1rem;
     border: 1px solid #E5E7EB;
-    border-radius: 0.5rem; /* 8px */
-    font-size: 1rem; /* 16px */
+    border-radius: 0.5rem;
+    font-size: 1rem;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .input:focus {
     border-color: #111827;
-    box-shadow: 0 0 0 0.2rem rgba(17, 24, 39, 0.1); /* ~3px */
+    box-shadow: 0 0 0 0.2rem rgba(17, 24, 39, 0.1);
 }
 
 .eyeIcon {
     position: absolute;
-    right: 1rem; /* ~15px */
+    right: 1rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -105,12 +110,15 @@
     justify-content: center;
 }
 
-.eyeIcon:hover {
-    color: #111827;
+.eyeIcon img {
+    width: 1.1rem;
+    height: 1.1rem;
+    opacity: 0.5;
+    object-fit: contain;
 }
 
 .forgotPass {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
     color: #9CA3AF;
     text-decoration: underline;
     cursor: pointer;
@@ -121,9 +129,9 @@
 }
 
 .switchLink {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
     color: #9CA3AF;
-    margin-top: -0.625rem; /* -10px */
+    margin-top: -0.5rem;
     cursor: pointer;
 }
 
@@ -133,263 +141,19 @@
 
 .buttonsRow {
     display: flex;
-    gap: 0.9375rem; /* 15px */
-    margin-top: 0.625rem; /* 10px */
+    gap: 0.9375rem;
+    margin-top: 1.25rem;
 }
 
 .btn {
-    flex: 1;
-    padding: 0.875rem; /* 14px */
-    border-radius: 1.875rem; /* 30px */
-    font-weight: 700;
-    font-size: 0.75rem; /* 12px */
+    padding: clamp(0.5rem, 2vh, 0.7rem);
+    border-radius: 1.875rem;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     text-transform: uppercase;
-    letter-spacing: 10%;
+    letter-spacing: 0.1em;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(30, 35, 50, 0.7);
-	-webkit-backdrop-filter: blur(0.5rem);
-	backdrop-filter: blur(0.5rem);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1000;
-	opacity: 0;
-	animation: fadeIn 0.3s forwards;
-}
-
-.modal {
-	background: #ffffff;
-	width: 31.25rem;
-	max-width: 90%;
-	padding: 2.5rem;
-	border-radius: 1.25rem;
-	box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
-	position: relative;
-	transform: scale(0.95);
-	animation: scaleUp 0.3s forwards;
-}
-
-.closeBtn {
-	position: absolute;
-	top: 1.25rem;
-	right: 1.25rem;
-	background: transparent;
-	border: none;
-	font-size: 1.5rem;
-	cursor: pointer;
-	color: #111827;
-	transition: transform 0.2s ease;
-}
-
-.closeBtn:hover {
-	transform: rotate(90deg);
-}
-
-.header {
-	margin-bottom: 1.875rem;
-	font-size: 1.25rem;
-	font-weight: 700;
-	color: #9CA3AF;
-}
-
-.activeTitle {
-	color: #111827;
-}
-
-.form {
-	display: flex;
-	flex-direction: column;
-	gap: 1.25rem;
-}
-
-.inputGroup {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.label {
-	font-size: 0.875rem;
-	font-weight: 600;
-	color: #111827;
-}
-
-.inputWrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
-}
-
-.input {
-	width: 100%;
-	padding: 0.875rem 1rem;
-	border: 1px solid #E5E7EB;
-	border-radius: 0.5rem;
-	font-size: 1rem;
-	outline: none;
-	transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.input:focus {
-	border-color: #111827;
-	box-shadow: 0 0 0 0.2rem rgba(17, 24, 39, 0.1);
-}
-
-.eyeIcon {
-	position: absolute;
-	right: 1rem;
-	background: none;
-	border: none;
-	cursor: pointer;
-	color: #9CA3AF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.eyeIcon:hover {
-	color: #111827;
-}
-
-.eyeIcon img {
-	width: 1.5rem;
-	height: 1.5rem;
-	opacity: 0.5;
-	object-fit: contain;
-}
-
-.forgotPass {
-	font-size: 0.875rem;
-	color: #9CA3AF;
-	text-decoration: underline;
-	cursor: pointer;
-	align-self: flex-start;
-	background: none;
-	border: none;
-	padding: 0;
-}
-
-.switchLink {
-	font-size: 0.875rem;
-	color: #9CA3AF;
-	margin-top: -0.625rem;
-	cursor: pointer;
-}
-
-.switchLink span {
-	text-decoration: underline;
-}
-
-.buttonsRow {
-	display: flex;
-	gap: 0.9375rem;
-	margin-top: 0.625rem;
-}
-
-.textPasswordContainer {
-	display: flex;
-	flex-direction: column;
-	gap: 0;
-	margin: clamp(0.3rem, 0.5rem, 0.7rem) 0;
-	padding: clamp(0.3rem, 0.5rem, 0.7rem) 0;
-}
-
-.textPasswordContainer .successText {
-	margin-bottom: 0;
-}
-
-.btn {
-	flex: 1;
-	padding: 0.875rem;
-	border-radius: 1.875rem;
-	font-weight: 500;
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	letter-spacing: 9%
-}
-
-.btnCancel {
-	background: #fff;
-	border: 1px solid #111827;
-	color: #111827;
-}
-
-.btnCancel:hover {
-	background: #F3F4F6;
-}
-
-.btnSubmit {
-	background: #111827;
-	border: 1px solid #111827;
-	color: #fff;
-}
-
-.btnSubmit:hover {
-	background: #2D3748;
-	transform: translateY(-0.125rem);
-	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
-}
-
-.btnSubmit:disabled {
-	opacity: 0.6;
-	cursor: not-allowed;
-	transform: none;
-	box-shadow: none;
-}
-
-.successContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding: 1.25rem 0;
-}
-
-.successTitle {
-	font-size: 1.25rem;
-	font-weight: 700;
-	margin-bottom: 0.625rem;
-}
-
-.successText {
-	color: #6B7280;
-	margin-bottom: 1.875rem;
-}
-
-.termsText {
-	font-size: 0.75rem;
-	color: #6B7280;
-	margin-top: 0.625rem;
-	line-height: 1.4;
-}
-
-.errorMessage {
-	color: #ef4444;
-	font-size: 0.875rem;
-	text-align: center;
-	padding: 0.5rem;
-	background-color: #fee2e2;
-	border-radius: 0.375rem;
-}
-
-@keyframes fadeIn {
-	to { opacity: 1; }
-}
-
-@keyframes scaleUp {
-	to { transform: scale(1); }
 }
 
 .btnCancel {
@@ -408,66 +172,63 @@
     color: #fff;
 }
 
-.btnSubmit:hover {
+.btnSubmit:hover:not(:disabled) {
     background: #2D3748;
-    transform: translateY(-0.125rem); /* -2px */
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15); /* 4px 12px */
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.btnSubmit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.termsText {
+    font-size: 0.8rem;
+    color: #6B7280;
+	width: 73%;
+    line-height: 1rem;
+}
+
+.highlight {
+    color: #E85A2D;
+    font-weight: 600;
+}
+
+.errorMessage {
+    color: #ef4444;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #fee2e2;
+    border-radius: 0.375rem;
 }
 
 .successContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+	align-items:start;
     text-align: center;
-    padding: 1.25rem 0; 
 }
-
-
 
 .successTitle {
     font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.625rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
 }
 
 .successText {
-    color: #6B7280;
-    margin-bottom: 1.875rem; 
+    opacity: 0.5;
+	font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
 }
-
-.termsText {
-    font-size: 0.75rem; /* 12px */
-    color: #6B7280;
-    margin-top: 0.625rem; /* 10px */
-    line-height: 1.4;
-}
-
-.highlight {
-    color: #E85A2D; 
-    font-weight: 600;
-}
-
+	
 @keyframes fadeIn {
     to { opacity: 1; }
 }
 
 @keyframes scaleUp {
     to { transform: scale(1); }
-}
-
-.eyeIcon img {
-    width: 1.5rem;  /* 24px */
-    height: 1.5rem; /* 24px */
-    opacity: 0.5;
-    object-fit: contain;
-}
-
-.errorMessage {
-    color: #ef4444;
-    font-size: 0.875rem; /* 14px */
-    text-align: center;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background-color: #fee2e2;
-    border-radius: 0.375rem;
 }

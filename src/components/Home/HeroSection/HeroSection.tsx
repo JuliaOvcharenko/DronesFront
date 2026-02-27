@@ -2,7 +2,6 @@ import styles from './HeroSection.module.css';
 import { IMAGES } from '../../../shared/images';
 import { useNavigate } from 'react-router-dom';
 
-
 export function HeroSection() {
     const navigate = useNavigate();
 
@@ -39,6 +38,11 @@ export function HeroSection() {
                         onClick={() => navigate('/catalog')}
                     >
                         ДО КАТАЛОГУ
+                        <img 
+                            src={IMAGES.strelkaWhite} 
+                            alt="Arrow right" 
+                            className={styles["btn-arrow"]} 
+                        />
                     </button>
                 </div>
 

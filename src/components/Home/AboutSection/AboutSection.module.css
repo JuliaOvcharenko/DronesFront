@@ -1,43 +1,42 @@
-
-
 .about-section {
     width: 100%;
     background-color: #fff;
-    padding: clamp(5rem, 10vh, 9.3rem) 0;
+    padding: clamp(3rem, 8vh, 6rem) 0;
     display: flex;
     justify-content: center;
-    margin-top: clamp(5rem, 10vh, 9.3rem);
+    margin-top: clamp(2rem, 9vh, 10rem);
     font-family: 'GT Walsheim Pro', sans-serif;
 }
 
 .container {
     width: 100%;
     max-width: 1440px;
-    padding: 0 20px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .title {
-    color: #E2E8F0;
-    font-weight: 700;
+    color: #CDD5DD;
+    font-weight: 900;
     text-transform: uppercase;
     margin: 0;
     line-height: 1;
-    font-size: calc(1.59vw + 2.82vh);
-    margin-bottom: clamp(1.5rem, 2rem, 3rem);
+    font-size: clamp(3rem, 3vw, 3.5rem);
+    margin-bottom: clamp(1.5rem, 3vh, 3rem);
 }
 
 .description {
     color: #111827;
     font-weight: 500;
     line-height: 1.6;
-    font-size: calc(0.46vw + 0.83vh);
-    max-width: clamp(30rem, 50vw, 45rem);
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    max-width: clamp(20rem, 60vw, 45rem);
     margin: 0;
-    margin-bottom: clamp(2rem, 3rem, 4rem);
+    margin-bottom: clamp(2rem, 4vh, 4rem);
 }
 
 .read-more-btn {
@@ -45,15 +44,16 @@
     color: #111827;
     border: 1px solid #111827;
     border-radius: clamp(1.5rem, 2rem, 2.5rem);
-    padding: clamp(0.8rem, 1rem, 1.2rem) clamp(2rem, 2.5rem, 3rem);
+    padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(2rem, 4vw, 3rem);
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.05em;
     cursor: pointer;
-    font-size: calc(0.36vw + 0.64vh);
+    font-size: clamp(0.875rem, 1vw, 1rem);
     transition: all 0.3s ease;
     font-family: 'GT Walsheim Pro', sans-serif;
 }
@@ -70,6 +70,42 @@
 }
 
 .read-more-btn:hover .btn-icon {
-    transform: translateX(5px);
+    transform: translateX(0.3rem);
     filter: brightness(0) invert(1);
+}
+
+
+
+@media (max-width: 800px) {
+    .about-section {
+        padding: clamp(3rem, 6vh, 4rem) 0; 
+        margin-top:0
+    }
+
+    .title {
+
+        font-size: clamp(2rem, 15vw, 3rem);
+        margin-bottom: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+        font-weight: 400;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .read-more-btn {
+        font-size: 1rem;
+        padding: clamp(1rem, 1.5rem, 2rem) clamp(3rem, 3.5rem, 4rem);
+        border-radius: clamp(2rem, 3rem, 4rem);
+    }
+
+    .btn-icon {
+        display: block;
+        width: 1.5rem;
+        height: auto;
+    }
+    
 }

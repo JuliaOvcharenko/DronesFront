@@ -4,6 +4,7 @@ import { IMAGES } from '../../images'
 import { loginUser, registerUser } from '../../../api/getUser'
 import { BASE_URL } from '../../api/baseUrl'
 import { useAuth } from '../../context/AuthContext'
+import { Link } from 'react-router-dom'
 
 interface AuthModalProps {
 	isOpen: boolean
@@ -149,7 +150,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 							>
 								Авторизація
 							</span>
-							{' / '}
+							<span className={styles.activeTitle}>{' / ' }</span>
 							<span
 								className={view === 'register' ? styles.activeTitle : ''}
 								onClick={() => switchView('register')}
@@ -166,6 +167,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 								<div className={styles.inputGroup}>
 									<label className={styles.label}>Ім'я</label>
 									<input
+										placeholder="Введіть ім'я"
 										className={styles.input}
 										type="text"
 										value={name}
@@ -177,6 +179,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 							<div className={styles.inputGroup}>
 								<label className={styles.label}>Email</label>
 								<input
+									placeholder='Введіть email'
 									className={styles.input}
 									type="email"
 									value={email}
@@ -188,6 +191,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 								<label className={styles.label}>Пароль</label>
 								<div className={styles.inputWrapper}>
 									<input
+										placeholder='Введіть пароль'
 										className={styles.input}
 										type={showPassword ? 'text' : 'password'}
 										value={password}
@@ -198,7 +202,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 										className={styles.eyeIcon}
 										onClick={() => setShowPassword(!showPassword)}
 									>
-										<img src={showPassword ? IMAGES.passFalse : IMAGES.passTrue} alt="toggle password" />
+										<img className={styles.eyeIconImg} src={showPassword ? IMAGES.passTrue : IMAGES.passFalse} alt="toggle password" />
 									</button>
 								</div>
 							</div>
@@ -208,6 +212,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 									<label className={styles.label}>Підтвердження пароля</label>
 									<div className={styles.inputWrapper}>
 										<input
+											placeholder='Повторіть пороль'
 											className={styles.input}
 											type={showPassword ? 'text' : 'password'}
 											value={confirmPassword}
@@ -218,7 +223,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 											className={styles.eyeIcon}
 											onClick={() => setShowPassword(!showPassword)}
 										>
-											<img src={showPassword ? IMAGES.passFalse : IMAGES.passTrue} alt="toggle password" />
+											<img src={showPassword ? IMAGES.passTrue : IMAGES.passFalse} alt="toggle password" />
 										</button>
 									</div>
 								</div>
@@ -255,7 +260,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 
 							{view === 'register' && (
 								<div className={styles.termsText}>
-									При вході або реєстрації, я підтверджую згоду з умовами публічного договору
+									При вході або реєстрації, я підтверджую згоду з умовами <Link className={styles.link} to="/terms">публічного договору</Link>
 								</div>
 							)}
 						</form>
@@ -266,10 +271,10 @@ export function AuthModal({ isOpen, onClose, onSuccess, initialView = 'login' }:
 					<div className={styles.successContainer}>
 						<h2 className={styles.successTitle}>Реєстрація</h2>
 						<p className={styles.successText}>
-							Акаунт успішно створено! Будь ласка, увійдіть.
+							Акаунт успішно створено!
 						</p>
 						<button className={`${styles.btn} ${styles.btnSubmit}`} onClick={() => switchView('login')}>
-							УВІЙТИ
+							ПЕРЕЙТИ НА САЙТ
 						</button>
 					</div>
 				)}
