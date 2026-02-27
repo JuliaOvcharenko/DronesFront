@@ -10,12 +10,14 @@ import { createOrder } from '../../shared/api/order';
 type DeliveryMethod = 'postomat' | 'department' | 'courier';
 type PaymentMainMethod = 'on_delivery' | 'pay_now';
 type OnlinePaymentMethod = 'card' | 'privat' | 'apple' | 'google';
+document.body.className = "white"
 
 const RadioCard = ({
     name, value, selectedValue, onChange, label, icon, children, showIcons
 }: any) => {
     const isActive = selectedValue === value;
     return (
+        
         <div className={`${styles.deliveryCard} ${isActive ? styles.deliveryCardActive : ''}`}>
             <label className={styles.cardHeader}>
                 <input
@@ -254,6 +256,7 @@ export const CheckoutPage = () => {
     );
 
     return (
+        
         <div className={styles.container}>
             <h1 className={styles.title}>ОФОРМИТИ ЗАМОВЛЕННЯ</h1>
 

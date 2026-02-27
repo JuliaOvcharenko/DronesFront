@@ -54,9 +54,7 @@ export function Footer(props: FooterProps) {
                         {!isMobile && (
                             <div className={styles.copyright}>
                                 <div className={styles["footer-line"]} />
-                                <p className={styles["copyright-text"]}>
-                                    © 2025 Drones Всі права застережені.
-                                </p>
+                                
                             </div>
                         )}
                     </div>

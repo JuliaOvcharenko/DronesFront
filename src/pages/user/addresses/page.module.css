@@ -9,6 +9,7 @@
 	font-size: clamp(1rem, 1.3rem, 1.5rem);
 	font-weight: 400;
 	color: #0C122A;
+	letter-spacing: -0.01em;
 }
 
 .addressList {
@@ -24,6 +25,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	background: #fff;
+	transition: border-color 0.2s ease;
 }
 
 .addressCardActive {
@@ -34,12 +37,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 0.75rem;
 }
 
 .radioWrapper {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
+	flex: 1;
+	min-width: 0;
 }
 
 .radio {
@@ -48,6 +54,7 @@
 	border-radius: 50%;
 	border: 0.12rem solid #CDD5DD;
 	flex-shrink: 0;
+	transition: border 0.15s ease;
 }
 
 .radioActive {
@@ -57,13 +64,19 @@
 .addressText {
 	font-size: clamp(0.75rem, 0.85rem, 1rem);
 	color: #0C122A;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .editBtn {
 	background: none;
 	border: none;
 	cursor: pointer;
-	font-size: 1.1rem;
+	padding: 0.2rem;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
 	color: #9EA0AA;
 	transition: color 0.2s ease;
 }
@@ -85,9 +98,10 @@
 }
 
 .label {
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	font-weight: 500;
 	color: #9EA0AA;
+	letter-spacing: 0.01em;
 }
 
 .autocompleteWrapper {
@@ -102,10 +116,11 @@
 	font-size: 0.9rem;
 	outline: none;
 	color: #0C122A;
-	transition: border-color 0.2s ease;
-	box-sizing: border-box;
-	appearance: none;
 	background: #fff;
+	appearance: none;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease;
+	font-family: inherit;
 }
 
 .input:focus {
@@ -123,7 +138,7 @@
 	z-index: 10;
 	max-height: 12rem;
 	overflow-y: auto;
-	box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.08);
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
 }
 
 .suggestionItem {
@@ -135,6 +150,7 @@
 	cursor: pointer;
 	font-size: 0.85rem;
 	color: #0C122A;
+	font-family: inherit;
 	transition: background 0.15s ease;
 }
 
@@ -146,18 +162,21 @@
 	display: flex;
 	gap: 0.75rem;
 	margin-top: 0.25rem;
+	flex-wrap: wrap;
 }
 
 .saveBtn {
 	border: 0.07rem solid #0C122A;
 	background: none;
-	height: clamp(2rem, 2.5rem, 3rem);
-	padding: 0 1.2rem;
+	height: 2.5rem;
+	padding: 0 1.4rem;
 	border-radius: 20px;
-	font-size: clamp(0.6rem, 0.75rem, 0.9rem);
+	font-size: 0.72rem;
 	color: #0C122A;
-	font-weight: 500;
+	font-weight: 600;
 	cursor: pointer;
+	letter-spacing: 0.06em;
+	font-family: inherit;
 	transition: background 0.2s ease;
 }
 
@@ -173,13 +192,15 @@
 .cancelBtn {
 	border: 0.07rem solid #CDD5DD;
 	background: none;
-	height: clamp(2rem, 2.5rem, 3rem);
-	padding: 0 1.2rem;
+	height: 2.5rem;
+	padding: 0 1.4rem;
 	border-radius: 20px;
-	font-size: clamp(0.6rem, 0.75rem, 0.9rem);
+	font-size: 0.72rem;
 	color: #9EA0AA;
-	font-weight: 500;
+	font-weight: 600;
 	cursor: pointer;
+	letter-spacing: 0.06em;
+	font-family: inherit;
 	transition: background 0.2s ease;
 }
 
@@ -190,13 +211,15 @@
 .deleteBtn {
 	border: 0.07rem solid #ef4444;
 	background: none;
-	height: clamp(2rem, 2.5rem, 3rem);
-	padding: 0 1.2rem;
+	height: 2.5rem;
+	padding: 0 1.4rem;
 	border-radius: 20px;
-	font-size: clamp(0.6rem, 0.75rem, 0.9rem);
+	font-size: 0.72rem;
 	color: #ef4444;
-	font-weight: 500;
+	font-weight: 600;
 	cursor: pointer;
+	letter-spacing: 0.06em;
+	font-family: inherit;
 	transition: background 0.2s ease;
 }
 
@@ -207,17 +230,78 @@
 .addBtn {
 	border: 0.07rem solid #CDD5DD;
 	background: none;
-	height: clamp(2rem, 2.5rem, 3rem);
+	height: 2.5rem;
 	padding: 0 1.5rem;
 	border-radius: 20px;
-	font-size: clamp(0.6rem, 0.75rem, 0.9rem);
+	font-size: 0.72rem;
 	color: #9EA0AA;
-	font-weight: 500;
+	font-weight: 600;
 	cursor: pointer;
 	align-self: flex-start;
+	letter-spacing: 0.06em;
+	font-family: inherit;
 	transition: background 0.2s ease;
 }
 
 .addBtn:hover {
 	background: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+	}
+
+	.saveBtn,
+	.cancelBtn,
+	.deleteBtn {
+		flex: 1;
+	}
+
+	.addBtn {
+		align-self: stretch;
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		width: 100%;
+		gap: 0.85rem;
+	}
+
+	.title {
+		font-size: 1.1rem;
+	}
+
+	.addressCard {
+		padding: 0.85rem 1rem;
+	}
+
+	.input {
+		font-size: 1rem; 
+	}
+
+	.formButtons {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.saveBtn,
+	.cancelBtn,
+	.deleteBtn {
+		width: 100%;
+		height: 2.8rem;
+	}
+
+	.addBtn {
+		align-self: stretch;
+		width: 100%;
+		height: 2.8rem;
+		text-align: center;
+	}
+
+	.suggestions {
+		max-height: 9rem;
+	}
 }

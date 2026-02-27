@@ -43,8 +43,8 @@
     color: #9EA0AA;
     cursor: pointer;
     text-decoration: none;
-
 }
+
 .contactsDataLink{
     color: #0C122A;
     font-weight: 500;
@@ -60,18 +60,18 @@ hr{
     width: 50%;
     gap: clamp(1rem, 1.5rem, 1.8rem);
     flex-direction: column;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .contactsDataBlock{
     color: #0C122A;
-    font-size: clamp(1rem, 1.5rem, 2rem)
+    font-size: clamp(1rem, 1.5rem, 2rem);
 }
 
 .inputsContainer{
     display: flex;
     gap: clamp(0.5rem, 1rem, 1.5rem);
-    justify-content:space-between;
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -87,10 +87,77 @@ hr{
     letter-spacing: 9%;
     display: flex;
     align-items: center;
-    justify-content:center;
-    padding: clamp(0.7rem, 0.8rem, 0.9rem) clamp(0.3rem, 0.5rem, 0.7rem)
+    justify-content: center;
+    padding: clamp(0.7rem, 0.8rem, 0.9rem) clamp(0.3rem, 0.5rem, 0.7rem);
 }
 
 .saveDataButton:hover{
     background-color: #f4eff7;
+}
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        padding: 2vw 4vw 12vw;
+        margin-bottom: clamp(1rem, 1.5rem, 2rem)
+    }
+    
+    .leftContainer {
+        max-width: 100%;
+        gap: 1.5rem;
+        padding-bottom: clamp(1rem, 1.5rem, 2rem)
+    }
+
+    .rightContainer {
+        width: 100%;
+    }
+
+    hr {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: clamp(3rem, 5rem, 6rem) 5vw 12vw; 
+        margin-bottom: clamp(1rem, 1.5rem, 2rem)
+    }
+
+    .leftContainer {
+        gap: 1.2rem;
+        padding-bottom: clamp(1rem, 1.5rem, 2rem)
+    }
+
+    .accountText {
+        font-size: 1.1rem;
+    }
+
+    .logoutButton {
+        width: auto;
+        font-size: 0.85rem;
+    }
+
+    .textLeft {
+        font-size: 0.85rem;
+    }
+
+    .contactsDataBlock {
+        font-size: 1.1rem;
+    }
+
+    .saveDataButton {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 0.85rem;
+        border-radius: 20px;
+        border: 1px solid 
+    }
+
+    .saveDataButton:hover{
+        background-color: black;
+        color: white
+    }
+
+    hr {
+        width: 100%;
+    }
 }
