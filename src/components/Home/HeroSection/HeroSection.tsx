@@ -35,14 +35,8 @@ export function HeroSection() {
 
                     <button
                         className={styles["catalog-btn"]}
-                        onClick={() => navigate('/catalog')}
-                    >
+                        onClick={() => navigate('/catalog')}>
                         ДО КАТАЛОГУ
-                        <img 
-                            src={IMAGES.strelkaWhite} 
-                            alt="Arrow right" 
-                            className={styles["btn-arrow"]} 
-                        />
                     </button>
                 </div>
 

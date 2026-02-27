@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    padding-top: clamp(12rem, 13rem, 16rem);
+    padding-top: clamp(2rem, 3rem, 4rem);
 }
 
 .contentWrapper {
@@ -30,7 +30,7 @@
 }
 
 .title {
-    font-size: clamp(3rem, 5vw, 5rem);
+    font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 800;
     text-transform: uppercase;
     margin: 0;

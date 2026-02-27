@@ -122,3 +122,122 @@
     font-size: clamp(0.2rem, 0.7rem, 1.2rem);
     letter-spacing: 9%
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .pageContainer {
+        padding: 0 4vw 12vw;
+    }
+
+    .mainText {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .contactsContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 6vw 4vw;
+    }
+
+    .ourContactsContainer,
+    .contactWithUsContainer {
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .ourContactsText {
+        font-size: 1rem;
+    }
+
+    .contactsText {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageContainer {
+        padding: 0 5vw 16vw;
+        align-items: stretch;
+        padding-top: clamp(4rem, 4.5rem, 5rem); 
+    }
+
+    .mainText {
+        font-size: 1.9rem;
+        text-align: center;
+        letter-spacing: 0.02em;
+    }
+
+    .ourContactsContainer,
+    .contactWithUsContainer {
+        width: 100%;
+        gap: 1.2rem;
+    }
+
+    .ourContactsText {
+        font-size: 0.9rem;
+    }
+
+    .contactsContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 8vw 5vw;
+    }
+
+    .contactsBlock {
+        gap: 1rem;
+    }
+
+    .infoMiniBlock {
+        gap: 0.5rem;
+    }
+
+    .contactsText {
+        font-size: 13px;
+    }
+
+    .icon {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+    }
+
+    .email {
+        height: 0.65rem;
+        flex-shrink: 0;
+    }
+
+    .socialMediaBlock {
+        gap: 1rem;
+    }
+
+    .socialMediaIcons {
+        width: 8rem;
+    }
+
+    .inputsContainer {
+        gap: 0.75rem;
+    }
+
+    .fieldError,
+    .errorMessage,
+    .successMessage {
+        font-size: 0.7rem;
+        padding-top: 0.4rem;
+    }
+
+    .buttonConfirm {
+        width: 100%;
+        height: 2.75rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        border-radius: 100px;
+    }
+}

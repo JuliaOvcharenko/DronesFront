@@ -26,7 +26,7 @@
     text-transform: uppercase;
     margin: 0;
     margin-bottom: clamp(2rem, 4vh, 4rem);
-    font-size: calc(1.59vw + 2.82vh);
+    font-size: calc(1.7vw + 3vh);
 }
 
 .grid {

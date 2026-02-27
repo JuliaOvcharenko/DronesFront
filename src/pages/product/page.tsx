@@ -8,6 +8,7 @@ import { BASE_URL } from '../../shared/api/baseUrl';
 import { useCart } from '../../shared/context/CartContext'; 
 
 export const ProductPage = () => {
+    document.body.className = "grey"
     const { id } = useParams<{ id: string }>();
 
     const [product, setProduct] = useState<FullProduct | null>(null);

@@ -14,13 +14,12 @@
     overflow-x: hidden; 
 }
 
-.catalog-p {
-    font-weight: bold;
-    font-size: clamp(2rem, 4vw, 3.5rem); 
+.catalog-p{
+    font-weight: 900;
+    font-size: calc(1.3vw + 2.6vh);
     color: #CDD5DD;
-    letter-spacing: 0.03em;
+    letter-spacing: 3%;
     text-align: center;
-    margin: 0;
 }
 
 .filter-container {

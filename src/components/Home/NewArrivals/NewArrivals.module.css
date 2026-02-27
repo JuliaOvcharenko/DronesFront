@@ -18,7 +18,7 @@
     text-align: center;
     margin: 0;
     margin-bottom: 2rem;
-    font-size: clamp(3rem, 3vw, 3.5rem);
+    font-size: calc(1.59vw + 2.82vh);
 }
 
 .grid {
