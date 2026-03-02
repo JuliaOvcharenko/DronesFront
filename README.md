@@ -59,7 +59,52 @@ ___
 
 ## Деталі роботи у команді | Details of teamwork
 
-__Відсутні.__
+
+Проєкт виконувався у складі команди з двох осіб. Співпраця була побудована на взаємодопомозі та спільному пошуку рішень.
+
+Ключові аспекти роботи:
+
+1. Розподіл задач відбувався природньо, відповідно до поточних потреб проєкту та взаємних домовленостей.
+
+2. Ми спільно обговорювали архітектуру, планували реалізацію та узгоджували підходи до написання коду, щоб уникнути конфліктів та забезпечити цілісність проєкту.
+
+___
+
+Незважаючи на складні умови та обмежений час, обидва учасники активно працювали над кодом, вели проєкт від початку до кінця. Завдяки спільним зусиллям, комунікації та взаємодопомозі вдалося успішно закрити дедлайн та отримати робочий результат.
+
+___
+
+Ключові навички, застосовані в командній роботі:
+
+1. Планування та декомпозиція задач.
+
+2. Контроль версій (Git) та вирішення конфліктів.
+
+3. Взаємодія в парі (pair programming elements).
+
+4. Дотримання дедлайнів.
+
+___
+
+The project was carried out as part of a two-person team. Our collaboration was built on mutual assistance and joint problem-solving.
+
+Key aspects of the work:
+
+1.  Task distribution occurred naturally, according to the project's current needs and our mutual agreements.
+2.  We jointly discussed the architecture, planned the implementation, and agreed on coding approaches to avoid conflicts and ensure the project's integrity.
+
+___
+
+Despite challenging conditions and limited time, both team members actively worked on the code, steering the project from start to finish. Thanks to our joint efforts, communication, and mutual support, we successfully met the deadline and achieved a working result.
+
+___
+
+Key skills applied in the teamwork:
+
+1.  Planning and task decomposition.
+2.  Version control (Git) and conflict resolution.
+3.  Pair interaction (pair programming elements).
+4.  Meeting deadlines.
 
 ___
 
@@ -83,7 +128,17 @@ The project's home page. The page presents new and popular store products, allow
 ___
 
 <details>
-    <summary><strong>Сторінка Каталогу | Catalog Page</strong></summary>
+    <summary><strong>Сторінка Каталогу товарів. | Catalog Page</strong></summary>
+
+___
+
+Сторінка каталогу товарів.
+Тут користувач може переглянути список доступних товарів і їхні ціни. За бажанням він може додати товар до кошика або натиснути на картку та перейти на сторінку товару.
+
+___
+
+Here the user can see the list of available products and their prices. If they want, they can add a product to the cart or click on the card to go to the product page.
+
 
 </details>
 
@@ -91,6 +146,15 @@ ___
 
 <details>
     <summary><strong>Сторінка контактів магазину | Shop Contacts Page</strong></summary>
+
+___
+
+На цій сторінці користувач може переглянути контактні дані магазину та, за бажанням, надіслати листа на електронну пошту.
+
+___
+
+On this page, the user can see the store’s contact information and, if they want, send an email message.
+
 
 </details>
 
@@ -115,6 +179,13 @@ ___
 <details>
     <summary><strong>Сторінка товару | Product Page</strong></summary>
 
+На цій сторінці представлена повна характеристика конкретного товару. Користувач можете додати продукт до кошика.
+
+___
+
+On this page, the full description of a specific product is presented. The user can add the product to the cart.
+
+
 </details>
 
 ___
@@ -122,12 +193,29 @@ ___
 <details>
     <summary><strong>Сторінка замовлення | Order Page</strong></summary>
 
+___
+
+На цій сторінці користувач оформлює замовлення через кошик. Є можливість вибору різних видів доставки і оплати.
+
+___
+
+On this page, the user places an order through the cart. There is an option to choose different delivery and payment methods.
+
 </details>
 
 ___
 
 <details>
     <summary><strong>Сторінка Кабінету | Account Page</strong></summary>
+
+___
+
+Сторінка кабінету користувача. Тут у користувача є можливість переглянути на редагувати власні дані, змінювати кастомні адреса та переглядати замовлення. 
+
+____
+
+Here the user can view and edit their personal information, change saved addresses, and see their orders.
+
 </details>
 
 ___
@@ -149,12 +237,31 @@ ___
 
 <details>
     <summary><strong>Сторінка реєстрації | Registration Page</strong></summary>
+
+___
+
+Тут користувач може зареєструватися, вказавши ім’я, електронну пошту та пароль.
+
+____
+
+Here the user can register by entering their name, email, and password.
+
 </details>
 
 ___
 
 <details>
     <summary><strong>Сторінка аутентифікації | Login Page</strong></summary>
+
+___
+
+Тут користувач може увійти до свого акаунта або скинути пароль через електронну пошту, на яку зареєстрований обліковий запис.
+
+___
+
+Here the user can log in to their account or reset the password via the email that was used for registration.
+
+
 </details>
 
 ___
