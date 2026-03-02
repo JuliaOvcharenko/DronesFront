@@ -324,6 +324,21 @@ ___
 
 ## Висновок | Conclusion
 
+Робота над цим проєктом стала першим досвідом створення односторінкового застосунку (SPA) з використанням бібліотеки React. Обидва учасники команди успішно опанували ключові концепції React, такі як компонентний підхід, маршрутизація, робота з хуками та управління станом на стороні клієнта.
+
+Незважаючи на стислі терміни та виклики, пов'язані з першим знайомством з технологією, нам вдалося розробити повністю функціональний застосунок з чіткою структурою та зрозумілим інтерфейсом. Спільне проєктування архітектури, розподіл задач та постійна комунікація дозволили уникнути типових помилок новачків, таких як конфлікти в коді або порушення цілісності проєкту.
+
+Особливу увагу було приділено організації коду: логічне розділення на шари (компоненти, сторінки, ресурси), зрозуміла система іменування файлів, використання модульних стилів. Це заклало основу для підтримуваності та масштабованості проєкту в майбутньому.
+
+Ключовим результатом стало не лише створення робочого продукту, а й здобуття практичних навичок командної роботи в умовах реального проєкту. Ми навчилися домовлятися про єдині стандарти коду, ефективно використовувати Git для спільної роботи, вирішувати конфлікти та допомагати одне одному знаходити оптимальні рішення. Цей досвід став міцним фундаментом для подальшого професійного розвитку кожного з учасників.
+
+____
 
 
+Working on this project was our first experience developing a single-page application (SPA) using the React library. Both team members successfully mastered key React concepts, such as the component-based approach, routing, working with hooks, and client-side state management.
 
+Despite the tight deadlines and the challenges associated with first getting acquainted with the technology, we managed to develop a fully functional application with a clear structure and an understandable interface. Collaborative architecture design, task distribution, and constant communication allowed us to avoid common beginner mistakes, such as code conflicts or compromising the project's integrity.
+
+Special attention was paid to code organization: logical separation into layers (components, pages, assets), a clear file naming system, and the use of modular styles. This laid the foundation for the project's maintainability and scalability in the future.
+
+The key outcome was not only the creation of a working product but also gaining practical teamwork skills in a real project environment. We learned to agree on unified coding standards, use Git effectively for collaboration, resolve conflicts, and help each other find optimal solutions. This experience has become a solid foundation for the future professional development of each team member.
